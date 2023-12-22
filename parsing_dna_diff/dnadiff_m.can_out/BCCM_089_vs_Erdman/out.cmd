@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/BCCM_089_vs_Erdman/out assemblies/BCCM_089.fasta assemblies/Erdman.1.fasta

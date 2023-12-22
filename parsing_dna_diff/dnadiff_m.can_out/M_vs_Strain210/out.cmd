@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/M_vs_Strain210/out assemblies/M.can.1.fasta assemblies/Strain210.1.fasta

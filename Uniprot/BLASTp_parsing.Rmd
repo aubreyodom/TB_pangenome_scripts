@@ -1,0 +1,49 @@
+---
+title: "BLASTp Parsing"
+author: "Aubrey Odom"
+date: "2023-09-20"
+output: html_document
+---
+
+# Setup 
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(magrittr)
+  library(data.table)
+})
+```
+
+
+# Read in BLAST and annotation tables
+```{R}
+uniprot <- fread("~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Uniprot/blast_fastas/Accessory_Gene_Prot_Seqs_uniprotBlastResults.csv",
+                 sep = "\t", header = FALSE)
+
+#acc <- readRDS("~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Uniprot/uniprot_accessed.RDS")
+```
+
+```{R}
+acc <- fread("~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Uniprot/uniprot_accessed_90.tsv.gz",
+                  sep = "\t", nThread = 2)
+
+saveRDS(acc, "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Uniprot/uniprot_accessed_90.RDS")
+```
+
+# Combine BLAST and Annotation tables
+```{R}
+uniq <- uniprot %>%
+  rename("Cluster ID" = V2) %>%
+  left_join(acc, by = "Cluster ID")
+```
+
+NEED TO split the Cluster ID and match on the latter half for results.
+
+
+# Write table to tab separated file
+```{R}
+write_delim(uniq, "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Uniprot/all_identified.tsv", delim = "\t")
+```
+
+Other notes:
+Do I need to limit from the top 5 options for each gene?? Or just let Elissa know

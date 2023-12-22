@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/BCCM_089_vs_Erdman/out assemblies/BCCM_089.fasta assemblies/Erdman.1.fasta

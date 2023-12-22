@@ -1,0 +1,337 @@
+IQ-TREE 2.2.0.3 COVID-edition built Aug  2 2022
+
+Input file name: /mnt/scratch/vascokar/TB/panaroo_rast/TB_gene_presence_panaroo_rast.tsv
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 712097
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 50 sequences with 4956 binary sites
+Number of constant sites: 4074 (= 82.2034% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 4074 (= 82.2034% of all sites)
+Number of parsimony informative sites: 443
+Number of distinct site patterns: 355
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: GTR2+FO+R2
+
+List of models sorted by BIC scores: 
+
+Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+GTR2+FO+R2       -11664.573   23529.146 +    0.838   23533.307 +    0.847   24179.981 +    0.996
+GTR2+FO+I+I+R2   -11665.813   23533.626 +   0.0892   23537.871 +   0.0864   24190.970 -  0.00409
+GTR2+FO+R3       -11665.310   23534.620 +   0.0543   23538.950 +   0.0504   24198.473 - 9.61e-05
+GTR2+FO+I+I+R3   -11665.381   23536.763 -   0.0186   23541.178 -   0.0165   24207.123 - 1.27e-06
+GTR2+FO+I+G4     -12060.304   24320.607 - 1.15e-172   24324.768 - 1.16e-172   24971.443 - 1.36e-172
+GTR2+FO+G4       -12119.250   24436.499 - 7.83e-198   24440.577 - 8.25e-198   25080.827 - 2.41e-196
+GTR2+FO+I        -13121.960   26441.919 -        0   26445.997 -        0   27086.247 -        0
+GTR2+FO          -13127.764   26451.529 -        0   26455.524 -        0   27089.347 -        0
+JC2+FQ+R2        -13973.242   28144.484 -        0   28148.561 -        0   28788.811 -        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR2+FO+R2
+
+Rate parameter R:
+
+  0-1: 1.0000
+
+State frequencies: (estimated with maximum likelihood)
+
+  pi(0) = 0.0903
+  pi(1) = 0.9097
+
+Rate matrix Q:
+
+  0    -5.537     5.537
+  1    0.5496   -0.5496
+
+Model of rate heterogeneity: FreeRate with 2 categories
+Site proportion and rates:  (0.9244,0.3101) (0.07558,9.438)
+
+ Category  Relative_rate  Proportion
+  1         0.3101         0.9244
+  2         9.438          0.07558
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -11593.1812 (s.e. 423.3786)
+Unconstrained log-likelihood (without tree): -6139.0785
+Number of free parameters (#branches + #model parameters): 100
+Akaike information criterion (AIC) score: 23386.3625
+Corrected Akaike information criterion (AICc) score: 23390.5232
+Bayesian information criterion (BIC) score: 24037.1979
+
+Total tree length (sum of branch lengths): 0.6432
+Sum of internal branch lengths: 0.1063 (16.5289% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0002) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'BCCM_082' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++--BCCM_082
+|
++--BCCM_083
+|
+|                                               +-----------------------------------------------------BCCM_085
+|                                            +**| (86)
+|                                            |  +--BCCM_088
+|                                         +--| (65)
+|                                         |  +--TDR76
+|                                      +--| (96)
+|                                      |  |  +--HN878
+|                                      |  +--| (75)
+|                                      |     +--TDR19
+|                                   +--| (85)
+|                                   |  +--TDR196
+|                                +--| (99)
+|                                |  +--TDR86
+|                             +--| (99)
+|                             |  |  +--BCCM_3241
+|                             |  +--| (84)
+|                             |     +--TDR116
+|                          +--| (45)
+|                          |  |  +--BCCM_087
+|                          |  +--| (37)
+|                          |     +--Strain210
+|                       +--| (28)
+|                       |  |     +--BCCM_092
+|                       |  |  +--| (54)
+|                       |  |  |  |     +**TDR152
+|                       |  |  |  |  +--| (100)
+|                       |  |  |  |  |  +**TDR74
+|                       |  |  |  +--| (100)
+|                       |  |  |     +--TDR193
+|                       |  +--| (30)
+|                       |     |  +--BCCM_093
+|                       |     +--| (45)
+|                       |        |  +--TDR156
+|                       |        +--| (45)
+|                       |           +--TDR91
+|                    +--| (30)
+|                    |  |                 +--BCCM_089
+|                    |  |              +--| (59)
+|                    |  |              |  +--BCCM_091
+|                    |  |           +--| (75)
+|                    |  |           |  |  +--TDR188
+|                    |  |           |  +--| (75)
+|                    |  |           |     +--TDR34
+|                    |  |        +--| (99)
+|                    |  |        |  +--BCCM_090
+|                    |  |     +--| (36)
+|                    |  |     |  |     +--BCCM_095
+|                    |  |     |  |  +--| (100)
+|                    |  |     |  |  |  +--BCCM_097
+|                    |  |     |  +--| (100)
+|                    |  |     |     +--BCCM_096
+|                    |  |  +--| (20)
+|                    |  |  |  |     +--Erdman
+|                    |  |  |  |  +--| (99)
+|                    |  |  |  |  |  +--TDR64
+|                    |  |  |  +--| (61)
+|                    |  |  |     +--TDR89
+|                    |  +--| (56)
+|                    |     |     +--CDC1551
+|                    |     |  +--| (51)
+|                    |     |  |  +--TDR144
+|                    |     +--| (30)
+|                    |        |        +**H37Rv_new
+|                    |        |     +--| (99)
+|                    |        |     |  +**TMC102
+|                    |        |  +--| (100)
+|                    |        |  |  +**NR123
+|                    |        +--| (97)
+|                    |           |     +**TDR51
+|                    |           |  +--| (100)
+|                    |           |  |  +**TDR58
+|                    |           +--| (100)
+|                    |              +**TDR69
+|                 +--| (21)
+|                 |  +--TDR33
+|              +--| (31)
+|              |  +--TDR180
+|           +--| (71)
+|           |  +--BCCM_094
+|        +--| (86)
+|        |  |  +--BCCM_098
+|        |  +--| (100)
+|        |     |  +--BCCM_099
+|        |     +--| (100)
+|        |        +--BCCM_100
+|     +--| (84)
+|     |  +--BCCM_101
+|  +--| (86)
+|  |  +--BCCM_102
++--| (77)
+   |     +--TDR146
+   |  +--| (81)
+   |  |  +--TDR1
+   +--| (78)
+      +--TDR5
+
+Tree in newick format:
+
+(BCCM_082:0.0129155027,BCCM_083:0.0015374381,((((((((((((((((BCCM_085:0.3166885915,BCCM_088:0.0003800465)86:0.0000259715,TDR76:0.0064612533)65:0.0012582946,(HN878:0.0040225021,TDR19:0.0016199991)75:0.0005106921)96:0.0019433166,TDR196:0.0027817183)85:0.0022323657,TDR86:0.0031050886)99:0.0052297126,(BCCM_3241:0.0095113630,TDR116:0.0036630390)84:0.0021564389)99:0.0019305740,(BCCM_087:0.0105042152,Strain210:0.0195167324)37:0.0018873609)45:0.0017959575,((BCCM_092:0.0115867355,((TDR152:0.0000025931,TDR74:0.0001172566)100:0.0013835125,TDR193:0.0014171516)100:0.0031027800)54:0.0012058364,(BCCM_093:0.0069156247,(TDR156:0.0032113345,TDR91:0.0102603034)45:0.0016676236)45:0.0024242694)30:0.0013046711)28:0.0003470232,((((((BCCM_089:0.0023122741,BCCM_091:0.0068273608)59:0.0014511716,(TDR188:0.0059114211,TDR34:0.0040915559)75:0.0017740824)75:0.0018029860,BCCM_090:0.0080571476)99:0.0040596918,((BCCM_095:0.0025696808,BCCM_097:0.0049768187)100:0.0028808449,BCCM_096:0.0044820580)100:0.0076890626)36:0.0018937590,((Erdman:0.0028721535,TDR64:0.0029370336)99:0.0043135140,TDR89:0.0076234670)61:0.0037184901)20:0.0010730250,((CDC1551:0.0031260203,TDR144:0.0098317330)51:0.0042723940,(((H37Rv_new:0.0000020588,TMC102:0.0001430428)99:0.0005708945,NR123:0.0000020704)100:0.0067944934,((TDR51:0.0001433969,TDR58:0.0000024012)100:0.0008505342,TDR69:0.0001472967)100:0.0059949463)97:0.0025322829)30:0.0008828013)56:0.0018324830)30:0.0011737447,TDR33:0.0057931620)21:0.0014611530,TDR180:0.0057429817)31:0.0025136670,BCCM_094:0.0097714916)71:0.0043993309,(BCCM_098:0.0011363532,(BCCM_099:0.0025018496,BCCM_100:0.0015079139)100:0.0007730818)100:0.0059410370)86:0.0020635496,BCCM_101:0.0027059076)84:0.0012983328,BCCM_102:0.0028137512)86:0.0026997517,((TDR146:0.0031438377,TDR1:0.0054038709)81:0.0007128390,TDR5:0.0012588975)78:0.0005743912)77:0.0007096608);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -11594.881951
+Robinson-Foulds distance between ML tree and consensus tree: 10
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--BCCM_082
+|
++--BCCM_083
+|
+|                                               +-----------------------------------------------------BCCM_085
+|                                            +--| (86)
+|                                            |  +--BCCM_088
+|                                         +--| (65)
+|                                         |  +--TDR76
+|                                      +--| (96)
+|                                      |  |  +--HN878
+|                                      |  +--| (75)
+|                                      |     +--TDR19
+|                                   +--| (85)
+|                                   |  +--TDR196
+|                                +--| (99)
+|                                |  +--TDR86
+|                             +--| (99)
+|                             |  |  +--BCCM_3241
+|                             |  +--| (84)
+|                             |     +--TDR116
+|                          +--| (51)
+|                          |  +--BCCM_087
+|                       +--| (28)
+|                       |  |     +--BCCM_092
+|                       |  |  +--| (54)
+|                       |  |  |  |     +--TDR152
+|                       |  |  |  |  +--| (100)
+|                       |  |  |  |  |  +--TDR74
+|                       |  |  |  +--| (100)
+|                       |  |  |     +--TDR193
+|                       |  +--| (10)
+|                       |     |     +--BCCM_093
+|                       |     |  +--| (48)
+|                       |     |  |  +--TDR156
+|                       |     +--| (19)
+|                       |        |  +--Strain210
+|                       |        +--| (54)
+|                       |           +--TDR91
+|                    +--| (30)
+|                    |  |                 +--BCCM_089
+|                    |  |              +--| (59)
+|                    |  |              |  +--BCCM_091
+|                    |  |           +--| (75)
+|                    |  |           |  |  +--TDR188
+|                    |  |           |  +--| (75)
+|                    |  |           |     +--TDR34
+|                    |  |        +--| (99)
+|                    |  |        |  +--BCCM_090
+|                    |  |     +--| (36)
+|                    |  |     |  |     +--BCCM_095
+|                    |  |     |  |  +--| (100)
+|                    |  |     |  |  |  +--BCCM_097
+|                    |  |     |  +--| (100)
+|                    |  |     |     +--BCCM_096
+|                    |  |  +--| (20)
+|                    |  |  |  |     +--Erdman
+|                    |  |  |  |  +--| (99)
+|                    |  |  |  |  |  +--TDR64
+|                    |  |  |  +--| (61)
+|                    |  |  |     +--TDR89
+|                    |  +--| (56)
+|                    |     |     +--CDC1551
+|                    |     |  +--| (51)
+|                    |     |  |  +--TDR144
+|                    |     +--| (30)
+|                    |        |        +--H37Rv_new
+|                    |        |     +--| (99)
+|                    |        |     |  +--TMC102
+|                    |        |  +--| (100)
+|                    |        |  |  +--NR123
+|                    |        +--| (97)
+|                    |           |     +--TDR51
+|                    |           |  +--| (100)
+|                    |           |  |  +--TDR58
+|                    |           +--| (100)
+|                    |              +--TDR69
+|                 +--| (21)
+|                 |  +--TDR33
+|              +--| (31)
+|              |  +--TDR180
+|           +--| (71)
+|           |  +--BCCM_094
+|        +--| (86)
+|        |  |  +--BCCM_098
+|        |  +--| (100)
+|        |     |  +--BCCM_099
+|        |     +--| (100)
+|        |        +--BCCM_100
+|     +--| (84)
+|     |  +--BCCM_101
+|  +--| (86)
+|  |  +--BCCM_102
++--| (77)
+   |     +--TDR146
+   |  +--| (81)
+   |  |  +--TDR1
+   +--| (78)
+      +--TDR5
+
+
+Consensus tree in newick format: 
+
+(BCCM_082:0.0128427013,BCCM_083:0.0015326631,((((((((((((((((BCCM_085:0.3185534543,BCCM_088:0.0001006076)86:0.0003000173,TDR76:0.0063488262)65:0.0012354026,(HN878:0.0039515517,TDR19:0.0015970211)75:0.0004920914)96:0.0019358621,TDR196:0.0027262200)85:0.0021814129,TDR86:0.0030856505)99:0.0053252481,(BCCM_3241:0.0094352857,TDR116:0.0035824544)84:0.0021088120)99:0.0021354148,BCCM_087:0.0123450154)51:0.0015570576,((BCCM_092:0.0115907307,((TDR152:0.0000025705,TDR74:0.0001166734)100:0.0013619864,TDR193:0.0014227693)100:0.0031426747)54:0.0013530188,((BCCM_093:0.0068408457,TDR156:0.0042089709)48:0.0005095414,(Strain210:0.0124134865,TDR91:0.0022738866)54:0.0084987102)19:0.0025270065)10:0.0009662638)28:0.0003199729,((((((BCCM_089:0.0023058549,BCCM_091:0.0067848054)59:0.0014268994,(TDR188:0.0058649291,TDR34:0.0040753947)75:0.0017702736)75:0.0017965197,BCCM_090:0.0080041450)99:0.0040068883,((BCCM_095:0.0025581643,BCCM_097:0.0049362236)100:0.0028768617,BCCM_096:0.0044340276)100:0.0076441632)36:0.0019342198,((Erdman:0.0029087323,TDR64:0.0029640887)99:0.0043357420,TDR89:0.0076210787)61:0.0037500072)20:0.0010836327,((CDC1551:0.0030525136,TDR144:0.0097636513)51:0.0042806559,(((H37Rv_new:0.0000025705,TMC102:0.0001431027)99:0.0005702221,NR123:0.0000025763)100:0.0067837450,((TDR51:0.0001413410,TDR58:0.0000025705)100:0.0008431524,TDR69:0.0001451313)100:0.0059334063)97:0.0025161322)30:0.0008180744)56:0.0018229246)30:0.0012281070,TDR33:0.0057560647)21:0.0014498732,TDR180:0.0056624658)31:0.0024818553,BCCM_094:0.0097079721)71:0.0043960240,(BCCM_098:0.0011244814,(BCCM_099:0.0024850574,BCCM_100:0.0014965245)100:0.0007741373)100:0.0059027753)86:0.0020527182,BCCM_101:0.0026918903)84:0.0012874092,BCCM_102:0.0027948255)86:0.0026822290,((TDR146:0.0031236503,TDR1:0.0053722251)81:0.0007086269,TDR5:0.0012503846)78:0.0005726560)77:0.0007014210);
+
+TIME STAMP
+----------
+
+Date and time: Wed Aug 30 23:39:43 2023
+Total CPU time used: 105.247543 seconds (0h:1m:45s)
+Total wall-clock time used: 93.17807103 seconds (0h:1m:33s)
+

@@ -1,0 +1,246 @@
+---
+title: "Validate_pangenome"
+author: "Aubrey Odom"
+date: "2023-08-14"
+output: html_document
+---
+
+# Setup
+
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(magrittr)
+  library(Rsamtools)
+})
+
+```
+
+# Read in data
+
+```{R}
+stem <- "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Alignments"
+
+fl <- file.path(stem, "ERR2704680_BCCM_083.sorted.bam")
+bf1 <- BamFile(fl)
+bam_index1 <- file.path(stem, "ERR2704680_BCCM_083.sorted.bam.bai")
+
+f2 <- file.path(stem, "ERR2704680_H37Rv_new.sorted.bam")
+bf2 <- BamFile(f2)
+bam_index3 <- file.path(stem, "ERR2704680_H37Rv_new.sorted.bam.bai")
+
+f3 <- file.path(stem, "ERR2704680_composite.sorted.bam")
+bf3 <- BamFile(f3)
+bam_index3 <- file.path(stem, "ERR2704680_composite.sorted.bam.bai")
+```
+
+# Data Exploration
+
+```{R}
+all_name <- scanBam(bf3, bam_index3,
+                    param = ScanBamParam(what = c("rname"))) %>%
+  extract2(1)
+```
+
+# Representations
+
+## Alignment to each gene
+
+- Calculate the total number of genes that are aligned
+- Present information via table or bar graph (histogram for different genes?)
+
+I need to somehow get the qname to reflect gene alignments??
+And then compare to all gene names in the entire fastq file?
+Create a simple two-number statistic with number of genes aligned or not aligned.
+
+```{R}
+head(all_name$rname)
+
+all_rname <- all_name$rname %>%
+  as.matrix() %>%
+  as_tibble() %>%
+  tidyr::separate(V1, into = c("Strain", "Gene number"), sep = "_GN_") %>%
+  tidyr::separate(`Gene number`, into = c("Gene number", NA), sep = "_")
+
+totals <- all_rname %>%
+  mutate(`Gene number` = as.numeric(`Gene number`)) %>%
+  group_by(Strain, `Gene number`) %>%
+  summarise(count = n())
+```
+
+
+```{R}
+save_figs <- "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Figures"
+for (strain in unique(totals$Strain)) {
+  totals %>%
+  filter(Strain == strain) %>%
+    ggplot2::ggplot(aes(x = `Gene number`, y = count)) +
+    geom_histogram(stat = "identity", fill = "black") +
+    labs(title = "Bar plot of gene alignments",
+         subtitle = strain) +
+    theme_classic() +
+     theme(axis.text.x = element_blank(),
+           axis.ticks.x = element_blank())
+  ggsave(file.path(save_figs, paste("Bar_", strain, ".png", sep = "")), width = 5, height = 4, units = "in")
+}
+```
+
+## RNA-seq alignment bar chart
+
+### RNA-seq data (old)
+```{R}
+
+# Create table based on alignment statistics
+table_num <- c(12221572, 4232839, 788787, 7199946,
+               12221572, 245375, 11673111, 303086,
+               12221572, 204889, 11702388, 314295) %>%
+  matrix(nrow = 3, byrow = TRUE,dimnames = list(c("Pangenome",
+                                     "H37Rv.1",
+                                     "BCCM 089"),
+                                   c("Total reads", "0 Alignments","1 Alignment", 
+                                     ">1 Alignment"))) %>%
+  as.data.frame() %>%
+  tibble::rownames_to_column() %>%
+  as_tibble() %>%
+  mutate("All Alignments" = `1 Alignment` + `>1 Alignment`)
+
+# Percentage aligned
+table_num[,-c(1, 2)]/12221572*100
+
+# Pivot table longer for plotting
+table_long <- pivot_longer(table_num, cols = c(3:6), 
+                           names_to = "Number Aligned", 
+                           values_to = "Value") %>%
+  mutate('Number Aligned' = factor(`Number Aligned`,
+                                   levels = c("0 Alignments","1 Alignment", 
+                                     ">1 Alignment", "All Alignments"))) %>%
+  mutate(pct = Value/as.numeric(`Total reads`)*100)
+
+# Plotting
+table_long %>%
+  ggplot(aes(x = rowname, y = pct, fill = `Number Aligned`)) +
+  geom_bar(position="dodge", stat="identity") +
+  geom_text(aes(group = `Number Aligned`,
+                label = round(pct)),
+            position = position_dodge(width=0.9),
+            vjust = -0.5, size = 2) +
+  theme_bw() +
+  labs(title = "Alignments across assemblies",
+       subtitle = "BCCM 089 RNA-Seq data") +
+  xlab("Assembly") +
+  ylab("Number of alignments") +
+
+  paletteer::scale_fill_paletteer_d("ggsci::default_locuszoom")
+
+ggsave(file.path(stem, "assembly_alignments.png"),
+       width = 10, height = 5, units = "in")
+
+```
+
+### DNA seq alignment bar chart
+
+```{text}
+ERR2704685_composite
+  719070 (100.00%) were paired; of these:
+    279814 (38.91%) aligned concordantly 0 times
+    2905 (0.40%) aligned concordantly exactly 1 time
+    436351 (60.68%) aligned concordantly >1 times
+ERR2704685_H37Rv_new
+194729 (27.08%) aligned concordantly 0 times
+    499769 (69.50%) aligned concordantly exactly 1 time
+    24572 (3.42%) aligned concordantly >1 times
+ERR2704685_BCCM_082
+719070 (100.00%) were paired; of these:
+    192861 (26.82%) aligned concordantly 0 times
+    503029 (69.96%) aligned concordantly exactly 1 time
+    23180 (3.22%) aligned concordantly >1 times
+ERR2704704_composite
+1379275 (100.00%) were paired; of these:
+    515414 (37.37%) aligned concordantly 0 times
+    5757 (0.42%) aligned concordantly exactly 1 time
+    858104 (62.21%) aligned concordantly >1 times
+ERR2704704_H37Rv_new
+1379275 (100.00%) were paired; of these:
+    245285 (17.78%) aligned concordantly 0 times
+    1089475 (78.99%) aligned concordantly exactly 1 time
+    44515 (3.23%) aligned concordantly >1 times
+ERR2704704_BCCM_082
+1379275 (100.00%) were paired; of these:
+    236947 (17.18%) aligned concordantly 0 times
+    1097059 (79.54%) aligned concordantly exactly 1 time
+    45269 (3.28%) aligned concordantly >1 times
+ERR2704680_composite
+2397164 (100.00%) were paired; of these:
+    532042 (22.19%) aligned concordantly 0 times
+    10166 (0.42%) aligned concordantly exactly 1 time
+    1854956 (77.38%) aligned concordantly >1 times
+ERR2704680_H37Rv_new
+2397164 (100.00%) were paired; of these:
+    363315 (15.16%) aligned concordantly 0 times
+    1917008 (79.97%) aligned concordantly exactly 1 time
+    116841 (4.87%) aligned concordantly >1 times
+ERR2704680_BCCM_083
+2397164 (100.00%) were paired; of these:
+    347790 (14.51%) aligned concordantly 0 times
+    1932190 (80.60%) aligned concordantly exactly 1 time
+    117184 (4.89%) aligned concordantly >1 times
+```
+
+
+```{R}
+# Create table based on alignment statistics
+table_num <- c(
+"ERR2704685-082_composite", 719070, 279814, 2905, 436351,
+"ERR2704685-082_H37Rv_new", 719070, 194729, 499769, 24572,
+"ERR2704685-082_BCCM_082", 719070, 192861, 503029, 23180,
+"ERR2704704-082_composite", 1379275, 515414, 5757, 858104,
+"ERR2704704-082_H37Rv_new", 1379275, 245285, 1089475, 44515,
+"ERR2704704-082_BCCM_082", 1379275, 236947, 1097059, 45269,
+"ERR2704680-083_composite", 2397164, 532042, 10166, 1854956,
+"ERR2704680-083_H37Rv_new", 2397164, 363315, 1917008, 116841,
+"ERR2704680-083_BCCM_083", 2397164, 347790, 1932190, 117184
+               ) %>%
+  matrix(ncol = 5, byrow = TRUE,
+         dimnames = list(c(),
+                         c("rownames","Total reads", 
+                           "0 Alignments","1 Alignment", 
+                           ">1 Alignment"))) %>%
+  as.data.frame() %>%
+  as_tibble() %>%
+  mutate(`1 Alignment` = as.numeric(`1 Alignment`),
+         `0 Alignments` = as.numeric(`0 Alignments`),
+         `>1 Alignment` = as.numeric(`>1 Alignment`),
+         "All Alignments" =
+           `1 Alignment` + `>1 Alignment`)
+
+# Pivot table longer for plotting
+table_long <- pivot_longer(table_num, cols = c(3:6), 
+                           names_to = "Number Aligned", 
+                           values_to = "Value") %>%
+  mutate('Number Aligned' = factor(`Number Aligned`,
+                                   levels = c("0 Alignments","1 Alignment", 
+                                     ">1 Alignment", "All Alignments"))) %>%
+  tidyr::separate(rownames, into = c("DNA", "Comparator"), sep = "_") %>%
+  mutate(pct = Value/as.numeric(`Total reads`)*100)
+
+# Plotting
+table_long %>%
+  ggplot(aes(x = `Comparator`, y = pct, fill = `Number Aligned`)) +
+  geom_bar(position="dodge", stat="identity") +
+  geom_text(aes(group = `Number Aligned`,
+                label = round(pct)),
+            position = position_dodge(width=0.9),
+            vjust = -0.5, size = 2) +
+  theme_bw() +
+  labs(title = "Alignments across assemblies",
+       subtitle = "BCCM 082/083 DNA data") +
+  xlab("Assembly") +
+  ylab("Percent aligned") +
+  paletteer::scale_fill_paletteer_d("ggsci::default_locuszoom") +
+  facet_wrap(vars(DNA)) +
+  ylim(c(0, 100))
+
+ggsave(file.path(stem, "dna_alignments.png"),
+       width = 10, height = 5, units = "in")
+
+```

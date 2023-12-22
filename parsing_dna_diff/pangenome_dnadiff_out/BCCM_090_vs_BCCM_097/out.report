@@ -1,0 +1,87 @@
+/Users/poonamchitale/Desktop/Pangenome_paper/final_genomes/assemblies/BCCM_090.fasta /Users/poonamchitale/Desktop/Pangenome_paper/final_genomes/assemblies/BCCM_097.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   4439067              4430669
+AlignedBases         4415377(99.47%)      4414616(99.64%)
+UnalignedBases          23690(0.53%)         16053(0.36%)
+
+[Alignments]
+1-to-1                           133                  133
+TotalLength                  4416334              4416374
+AvgLength                   33205.52             33205.82
+AvgIdentity                    99.88                99.88
+
+M-to-M                           207                  207
+TotalLength                  4466669              4466545
+AvgLength                   21578.11             21577.51
+AvgIdentity                    99.82                99.82
+
+[Feature Estimates]
+Breakpoints                      412                  412
+Relocations                       28                   32
+Translocations                     0                    0
+Inversions                        14                   14
+
+Insertions                       108                   74
+InsertionSum                   60882                35722
+InsertionAvg                  563.72               482.73
+
+TandemIns                         19                   13
+TandemInsSum                    2230                 2324
+TandemInsAvg                  117.37               178.77
+
+[SNPs]
+TotalSNPs                       2635                 2635
+GC                        185(7.02%)           167(6.34%)
+GT                        160(6.07%)           151(5.73%)
+GA                       405(15.37%)          394(14.95%)
+CT                       425(16.13%)          351(13.32%)
+CA                        182(6.91%)           145(5.50%)
+CG                        167(6.34%)           185(7.02%)
+TC                       351(13.32%)          425(16.13%)
+TA                         36(1.37%)            34(1.29%)
+TG                        151(5.73%)           160(6.07%)
+AG                       394(14.95%)          405(15.37%)
+AT                         34(1.29%)            36(1.37%)
+AC                        145(5.50%)           182(6.91%)
+
+TotalGSNPs                      2055                 2055
+CA                        131(6.37%)           111(5.40%)
+CT                       358(17.42%)          295(14.36%)
+CG                        110(5.35%)           125(6.08%)
+TA                         20(0.97%)            11(0.54%)
+TC                       295(14.36%)          358(17.42%)
+TG                        105(5.11%)           118(5.74%)
+AT                         11(0.54%)            20(0.97%)
+AC                        111(5.40%)           131(6.37%)
+AG                       336(16.35%)          335(16.30%)
+GC                        125(6.08%)           110(5.35%)
+GT                        118(5.74%)           105(5.11%)
+GA                       335(16.30%)          336(16.35%)
+
+TotalIndels                     1651                 1651
+G.                       328(19.87%)          312(18.90%)
+C.                       249(15.08%)          297(17.99%)
+T.                        129(7.81%)           130(7.87%)
+A.                         97(5.88%)           109(6.60%)
+.G                       312(18.90%)          328(19.87%)
+.C                       297(17.99%)          249(15.08%)
+.A                        109(6.60%)            97(5.88%)
+.T                        130(7.87%)           129(7.81%)
+
+TotalGIndels                     123                  123
+C.                        19(15.45%)           21(17.07%)
+T.                         10(8.13%)            10(8.13%)
+A.                          7(5.69%)             9(7.32%)
+G.                        30(24.39%)           17(13.82%)
+.G                        17(13.82%)           30(24.39%)
+.C                        21(17.07%)           19(15.45%)
+.T                         10(8.13%)            10(8.13%)
+.A                          9(7.32%)             7(5.69%)

@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/BCCM_089_vs_BCCM_098/out assemblies/BCCM_089.fasta assemblies/BCCM_098.fasta

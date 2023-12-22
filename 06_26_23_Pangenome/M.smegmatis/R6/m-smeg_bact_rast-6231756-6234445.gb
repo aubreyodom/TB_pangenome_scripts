@@ -1,0 +1,105 @@
+LOCUS       m.smeg_bact_RAST_[62317 2690 bp ds-DNA     linear       14-MAR-2023
+DEFINITION  Mycolicibacterium smegmatis MC2 155 m.smeg_bact_RAST
+ACCESSION   cluster_001_consensus_pilon_pilon_pilon
+SOURCE      Mycolicibacterium smegmatis MC2 155
+  ORGANISM  Mycolicibacterium smegmatis MC2 155 cellular organisms; Bacteria;
+            Terrabacteria group; Actinomycetota; Actinomycetes;
+            Corynebacteriales; Mycobacteriaceae; Mycolicibacterium;
+            Mycolicibacterium smegmatis.
+COMMENT     Imported using the Genbank importer. File name: m.smeg_bact_RAST.gb
+FEATURES             Location/Qualifiers
+     misc_feature    1..2690
+                     /label="cluster_001_consensus_pilon_pilon_pilon"
+                     /ApEinfo_revcolor="#d59687"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /note="cluster_001_consensus_pilon_pilon_pilon"
+                     /db_xref="taxon:246196"
+     source          1..2690
+                     /label="246196.116"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+                     /db_xref="taxon:246196"
+                     /mol_type="genomic DNA"
+                     /organism="Mycolicibacterium smegmatis MC2 155m.smeg_bact_RAST"
+     CDS             1..1041
+                     /label="Mobile element protein"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /note="rasttk_feature_creation_tool=glimmer3"
+                     /db_xref="RAST2:fig|246196.116.peg.6079"
+                     /note="rasttk_feature_annotation_tool=annotate_proteins_kmer_v2"
+                     /transl_table=11
+                     /translation="VWRQDASAAAEPRARLSRRALRWALEALVCQHLSVARVAEALAVSWNTANNAVLAEGQRVLIADPARFDGVAVIGVDEHVWRHTRRGDKYVTVIIDLTPVRDGTGPARLLDMVEGRSKKAFADWLAQRPQEWRDRVDVVAMDGFSGFKTAATEELPDAATVMDPFHVVRLAGNALDECRRRVQLATCGHRGRSTDPLYRSRRTLHTGADLLTDRQKARLAALFAANAHAEIEATWAMYQRTVAAYREPDRTKGRTMMAALITTLSTGVPTSLTELITLGRTLKKRAADVLAYFDRPGTSNGPTEAINGRLEHLRGSALGFRNLTNYIARSLLETGGFRTQLRQPRR*"
+     repeat_region   1..1868
+                     /label="repeat region"
+                     /ApEinfo_revcolor="#b7e6d7"
+                     /ApEinfo_fwdcolor="#b7e6d7"
+                     /note="rasttk_feature_creation_tool=svr_big_repeats |svr_condense_repeats"
+                     /db_xref="RAST2:fig|246196.116.repeat.90"
+                     /rpt_type="other"
+     CDS             complement(1049..1750)
+                     /label="plasmid pRiA4b ORF-3 family protein"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /note="rasttk_feature_creation_tool=glimmer3"
+                     /db_xref="RAST2:fig|246196.116.peg.6080"
+                     /note="rasttk_feature_annotation_tool=annotate_proteins_kmer_v2"
+                     /transl_table=11
+                     /translation="VSGGSVDLALLQKLMADAGRNVFAGMFDEPTPEVRAVPDRARGFRVRVDLMYAKPPIWRRLDLPGDLMLDELHVVLQVVMGWQDSHLHKFGVGADRRTRAYFVTGFDLSEGDDGVVEDSVRLDQVVSDKGERLFYDYDFGDGWDHVLVVEDVFDDPPPAAVCLTGKMACPPEDCGGLGGYEELAAWVRGGYDPRETPMGLGAQEMRDWLPRGWHPDRFSVAETNDALAALNTR*"
+     CDS             2334..2690
+                     /label="4-carboxymuconolactone decarboxylase (EC4.1.1.44)"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /note="rasttk_feature_creation_tool=glimmer3"
+                     /EC_number="4.1.1.44"
+                     /db_xref="RAST2:fig|246196.116.peg.6081"
+                     /note="rasttk_feature_annotation_tool=annotate_proteins_kmer_v2"
+                     /transl_table=11
+                     /translation="VREKGFQVLRELLPDLPLDGFQRDGSFGDELLEIGLDNVFGRLWSREGLSRRDRSLVTMGILIALRATDEFASHVKIARNNGLTEQEIAEVIYHSSGYAGFPNANTAMKVAKGVLEGP*"
+ORIGIN
+        1 gtgtggcgcc aggatgccag cgccgcagcc gaaccgcggg ccaggctgtc ccggcgtgct
+       61 ctgcggtggg cgctggaagc ccttgtctgc caacacctgt cggtggcccg ggtcgccgag
+      121 gcgcttgcgg tgtcgtggaa cactgccaac aacgccgtgc tcgccgaagg tcagcgggtg
+      181 ctcatcgccg atccggcccg gttcgatggc gtcgcggtga tcggcgtcga tgagcacgtg
+      241 tggcggcaca ctcgccgcgg cgacaagtac gtcaccgtca tcatcgatct cacgcccgtg
+      301 cgtgacggga ccggccccgc acggctgctc gacatggtgg agggccgctc caagaaggcg
+      361 ttcgccgact ggctggcaca gcggccacag gagtggcgtg atcgtgtgga cgttgttgcc
+      421 atggacgggt tctccgggtt caagaccgcc gccaccgaag aactgcctga cgcggccacg
+      481 gtgatggacc ccttccacgt ggtccgcctg gccggcaacg ccctcgacga gtgccgacgc
+      541 cgcgtgcagc tggccacctg cgggcaccgc ggccgcagca ccgacccgct ctaccgatcg
+      601 cgacgcaccc tgcacaccgg ggccgacctg ctcaccgacc gccagaaagc ccgactggcc
+      661 gcactgttcg ccgccaacgc gcacgccgag atcgaggcca cctgggcgat gtatcaacgc
+      721 accgtggccg cctaccgcga accagaccgc accaagggcc gcaccatgat ggctgcactg
+      781 atcaccacgc tgagcacagg cgtccccacg tcgctgaccg agctgatcac cctcgggcgg
+      841 acactgaaga agcgtgccgc cgacgtcctg gcctacttcg accgccccgg cacctccaac
+      901 gggccgaccg aagcgatcaa cggccgcctc gaacacctgc gcggatccgc cctgggcttc
+      961 cgcaacctca ccaactacat cgcccggtcc ctgctcgaga ccggaggctt ccgaacccag
+     1021 ctccgtcaac ctcggcggtg aagaatcctc aacgcgtgtt caacgcggcc agagcgtcat
+     1081 tggtctcggc caccgagaaa cggtcggggt gccagccccg gggcagccag tccctcatct
+     1141 cctgcgcacc gagtcccatc ggcgtttccc gcgggtcgta cccgccgcga acccacgcag
+     1201 ccaactcctc atagccgccc aggccaccac agtcctccgg cggacaggcc atctttcccg
+     1261 tcagacacac cgcagccggg ggcggatcat cgaaaacgtc ttcgaccacg agcacgtggt
+     1321 cccatccgtc gccgaagtcg taatcgtaga acaaccgctc gcccttatcg gacaccacct
+     1381 gatcgaggcg cacgctgtcc tcgacgacac cgtcgtcgcc ttcgctgaga tcaaacccgg
+     1441 tgacgaagta ggcacgggtc cgccggtccg ccccgacacc gaacttatgc agatgactgt
+     1501 cctgccagcc cataacgacc tgcagcacaa catggagctc atcgagcatg aggtcgcccg
+     1561 gcaggtccag ccgacgccag atcggcggct tggcgtacat caggtcgacg cgcacccgga
+     1621 agccccgcgc acgatccggc accgcccgca cctcgggcgt cggctcatcg aacattcccg
+     1681 cgaacacgtt ccgaccagcg tcggccatta gcttctgcag caacgccagg tccacactgc
+     1741 ccccggacac tccgctcttc ctcttgctct tccgcttctt ctccggcaca ccccaagcca
+     1801 accagacccc tcgatcacag cgcgaaagca gctgatcgtc tctacaccgt caagtgcgaa
+     1861 gagcccctat atctcggcgt ccgccagaga gactcaagcc ggagtcgagc cgcacaacga
+     1921 ctccccttac gtcggaatat cagtgcggca ggtcgaactg actcaacgcg accctcgcct
+     1981 cgctgccgat gcttctgcgc cctcacaggg gccccagaag ggaccagccc cggcccctca
+     2041 agtcgacgtc ttcggcaact ggttcatcac tgcgtcaagc agcgtcggat ggggaccgat
+     2101 cactcggccc gtcctcgaca acttccccac cccggaaatc gagaagcgct gcagcgactc
+     2161 catgccgcac aacgaggctc aacgccggga gatgatgacc gggtacaaag atcaacctcc
+     2221 gccccacggc gacgcagtac caggctggcc tctcaggagc gagtgactgg acgcagtatg
+     2281 cgagtggccc cgcgccagta gacatgccat gcaaagctgc acgcatgaca gatgtgcgtg
+     2341 aaaaaggctt ccaggttctg cgtgaacttc tccctgatct ccccctcgac ggattccagc
+     2401 gtgacgggtc gttcggcgac gaactgctgg agatcgggct cgacaacgtc ttcggacggt
+     2461 tgtggagccg cgagggcctg agccgccggg accgcagcct ggtgaccatg ggcatcctga
+     2521 tcgccctgcg cgccaccgac gagttcgcct cacacgtcaa gatcgcccgc aacaacggcc
+     2581 tcaccgaaca ggagatcgcc gaggtcatct accactccag cggctacgcc ggattcccga
+     2641 acgccaacac ggcgatgaaa gtggccaaag gggtactcga gggcccgtga
+//

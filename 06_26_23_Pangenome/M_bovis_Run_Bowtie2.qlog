@@ -1,0 +1,60 @@
+==========================================================
+Start date : Thu Jun 29 22:19:33 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+Mbovis_M.bovis_genbank_sequence
+Starting alignment
+1379592 reads; of these:
+  1379592 (100.00%) were paired; of these:
+    307708 (22.30%) aligned concordantly 0 times
+    1036325 (75.12%) aligned concordantly exactly 1 time
+    35559 (2.58%) aligned concordantly >1 times
+    ----
+    307708 pairs aligned concordantly 0 times; of these:
+      264365 (85.91%) aligned discordantly 1 time
+    ----
+    43343 pairs aligned 0 times concordantly or discordantly; of these:
+      86686 mates make up the pairs; of these:
+        44421 (51.24%) aligned 0 times
+        27751 (32.01%) aligned exactly 1 time
+        14514 (16.74%) aligned >1 times
+98.39% overall alignment rate
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+Mbovis_Mbovis1new_Three_pilon
+Starting alignment
+1379592 reads; of these:
+  1379592 (100.00%) were paired; of these:
+    307696 (22.30%) aligned concordantly 0 times
+    1036204 (75.11%) aligned concordantly exactly 1 time
+    35692 (2.59%) aligned concordantly >1 times
+    ----
+    307696 pairs aligned concordantly 0 times; of these:
+      264337 (85.91%) aligned discordantly 1 time
+    ----
+    43359 pairs aligned 0 times concordantly or discordantly; of these:
+      86718 mates make up the pairs; of these:
+        44424 (51.23%) aligned 0 times
+        27743 (31.99%) aligned exactly 1 time
+        14551 (16.78%) aligned >1 times
+98.39% overall alignment rate
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+Mbovis_Mbovis2_Three_pilon
+Starting alignment
+1379592 reads; of these:
+  1379592 (100.00%) were paired; of these:
+    307696 (22.30%) aligned concordantly 0 times
+    1036204 (75.11%) aligned concordantly exactly 1 time
+    35692 (2.59%) aligned concordantly >1 times
+    ----
+    307696 pairs aligned concordantly 0 times; of these:
+      264337 (85.91%) aligned discordantly 1 time
+    ----
+    43359 pairs aligned 0 times concordantly or discordantly; of these:
+      86718 mates make up the pairs; of these:
+        44424 (51.23%) aligned 0 times
+        27743 (31.99%) aligned exactly 1 time
+        14551 (16.78%) aligned >1 times
+98.39% overall alignment rate
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+DONE!

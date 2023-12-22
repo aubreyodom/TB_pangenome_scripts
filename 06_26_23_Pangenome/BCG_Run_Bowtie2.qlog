@@ -1,0 +1,40 @@
+==========================================================
+Start date : Tue Jun 27 01:00:34 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+BCG_BCG3_Three_pilon.fasta
+Starting alignment
+566054 reads; of these:
+  566054 (100.00%) were paired; of these:
+    138563 (24.48%) aligned concordantly 0 times
+    406268 (71.77%) aligned concordantly exactly 1 time
+    21223 (3.75%) aligned concordantly >1 times
+    ----
+    138563 pairs aligned concordantly 0 times; of these:
+      108062 (77.99%) aligned discordantly 1 time
+    ----
+    30501 pairs aligned 0 times concordantly or discordantly; of these:
+      61002 mates make up the pairs; of these:
+        39735 (65.14%) aligned 0 times
+        11134 (18.25%) aligned exactly 1 time
+        10133 (16.61%) aligned >1 times
+96.49% overall alignment rate
+BCG_BCG1_Three_pilon.fasta
+Starting alignment
+566054 reads; of these:
+  566054 (100.00%) were paired; of these:
+    138543 (24.48%) aligned concordantly 0 times
+    406318 (71.78%) aligned concordantly exactly 1 time
+    21193 (3.74%) aligned concordantly >1 times
+    ----
+    138543 pairs aligned concordantly 0 times; of these:
+      108085 (78.02%) aligned discordantly 1 time
+    ----
+    30458 pairs aligned 0 times concordantly or discordantly; of these:
+      60916 mates make up the pairs; of these:
+        39734 (65.23%) aligned 0 times
+        11077 (18.18%) aligned exactly 1 time
+        10105 (16.59%) aligned >1 times
+96.49% overall alignment rate
+DONE!

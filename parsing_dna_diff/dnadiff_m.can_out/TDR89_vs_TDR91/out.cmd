@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/TDR89_vs_TDR91/out assemblies/TDR89.fasta assemblies/TDR91.fasta

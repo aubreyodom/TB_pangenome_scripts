@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/TDR34_vs_TDR64/out assemblies/TDR34.fasta assemblies/TDR64.fasta

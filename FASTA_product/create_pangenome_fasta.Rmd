@@ -1,0 +1,220 @@
+
+Attempt to do the HDF5 cell ranger read-in
+Want to consolidate all genes, then need to simplify by identity
+
+```{R}
+suppressPackageStartupMessages({
+#install.packages("rhdf5")
+#install.packages("RecordLinkage")
+library(rhdf5)
+library(tidyverse)
+library(RecordLinkage)
+})
+
+```
+
+# Extract H5 info
+
+```{R}
+stem <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product"
+```
+
+## Python data
+```{R}
+# Gene names
+h5genes_pre <- data.table::fread(file = file.path(stem, "h5genes.csv"), 
+                  sep = ",", nrows = 1, header = FALSE, nThread = 1) %>% t()
+
+remove_excess <- function(x, mem) stringr::str_remove_all(x, mem)
+h5genes <- matrix(h5genes_pre, ncol = 14, byrow = TRUE) %>%
+  as_tibble() %>%
+  select(-c(V1, V2, V4, V5, V6, V9)) %>%
+  apply(2, function(x) remove_excess(x, "b\\'")) %>%
+  apply(2, function(x) remove_excess(x, "\\'\\)")) %>%
+  apply(2, function(x) remove_excess(x, "\\'"))
+rm(h5genes_pre)
+
+# H5RGP
+h5RGP <- data.table::fread(file.path(stem, "h5RGP.csv"),
+                           sep = ",", header = FALSE, nrows = 1) %>% 
+  t() %>% as.data.frame() %>% unlist %>% unname() %>% 
+  matrix(ncol = 2, byrow = TRUE) %>%
+  apply(2, function(x) remove_excess(x, "b\\'")) %>%
+  apply(2, function(x) remove_excess(x, "\\'\\)")) %>%
+  apply(2, function(x) remove_excess(x, "\\'"))
+
+# Gene sequences
+#h5geneseqs <- read.csv(file.path(stem, "h5geneseqs.csv"))
+```
+
+## Reading in H5 with an R package
+```{R}
+# Read in Poonam's file
+all_genes <- H5Fopen(file.path(stem, "pangenome.h5"))$geneSequences %>%
+  as_tibble() %>% select(-type)
+```
+
+# Combining data
+```{R}
+combined <- h5genes %>%
+  as_tibble() %>%
+  mutate(V3 = stringr::str_remove_all(V3, "\\(")) %>%
+  dplyr::rename(gene = V3) %>%
+  left_join(all_genes, by = "gene")
+```
+
+## Write to CSV without gene sequences
+```{R}
+h5genes %>%
+  as.data.frame() %>%
+data.table::fwrite(file.path(stem, "pangenome_no_seqs.csv"),
+       col.names = FALSE, quote = FALSE)
+```
+
+## Write genes to a FASTA file
+```{R}
+new <- combined %>%
+  mutate(V8 = as.numeric(V8),
+         V7 = stringr::str_remove_all(V7, "[^[:alnum:] ]"),
+         gene = paste("GN", V8, sep = ""),
+         V14 = stringr::str_remove_all(V14, "_"),
+         V14 = relevel(factor(V14), ref = "H37Rvnew")) %>%
+  arrange(V14, V8) %>%
+  filter(!is.na(dna)) %>%
+  select(V7, gene, V14, dna)
+
+# Relabel duplicates
+
+dupe_1 <- new %>%
+  group_by(dna) %>%
+  mutate(dupe = duplicated(dna))
+# Identify duplicated genomes
+dupe_2 <- dupe_1 %>%
+  filter(dupe == TRUE) %>%
+  select(dna, V14) %>%
+  arrange(dna) %>%
+  distinct(V14, .keep_all = TRUE) %>%
+  summarise(cat = paste(V14, collapse = "_"))
+# merge those genome names with the original genes
+
+dupe_fin <- dupe_1 %>%
+  filter(dupe == FALSE) %>%
+  full_join(dupe_2, by = "dna") %>%
+  replace_na(list(cat = ""))
+
+ready_fasta <- dupe_fin %>%
+  tidyr::unite(col = "Header", V14, gene, cat, V7, sep = "|") %>%
+  dplyr::mutate(
+    Header = stringr::str_replace_all(Header, " ", "_"),
+    "Space" = " ",
+    "Header" = stringr::str_c(">", Header)) %>%
+  dplyr::select(Header, dna, Space) %>% 
+  as.matrix() %>% t() %>%
+  as.character() %>% dplyr::as_tibble()
+
+ready_fasta %>%
+  data.table::fwrite(
+    file = file.path(stem, "pangenome.fasta.gz"), compress = "gzip",
+    col.names = FALSE,
+    quote = FALSE, append = FALSE)
+```
+
+## Test - remove BCCM strains
+```{R}
+ready_no_BCCM <- dupe_fin %>%
+  filter(!(V14 %in% c("BCCM082", "BCCM083"))) %>%
+  tidyr::unite(col = "Header", V14, gene, cat, V7, sep = "|") %>%
+  dplyr::mutate(
+    Header = stringr::str_replace_all(Header, " ", "_"),
+    "Space" = " ",
+    "Header" = stringr::str_c(">", Header)) %>%
+  dplyr::select(Header, dna, Space) %>% 
+  as.matrix() %>% t() %>%
+  as.character() %>% dplyr::as_tibble()
+
+ready_no_BCCM %>%
+  data.table::fwrite(
+    file = file.path(stem, "pangenome_no_BCCM.fasta.gz"), compress = "gzip",
+    col.names = FALSE,
+    quote = FALSE, append = FALSE)
+```
+
+## Compare specifics
+```{R}
+# How many genes in each?
+dupe_1 %>%
+  group_by(V14) %>%
+  summarise(num = n())
+
+# H37Rvnew = 4257
+# BCCM082	= 4275			
+# BCCM083 = 4270	
+
+get_sims <- function(comp = "BCCM083") {
+  counting_sims <- dupe_1 %>%
+  ungroup() %>%
+  arrange(dna) %>%
+  filter(V14 %in% c("H37Rvnew", comp)) %>%
+  select(V7, V14, dna) %>%
+  pivot_wider(id_cols = c("dna", "V7"), names_from = "V14", 
+              values_from = "V14", values_fn = ~1, values_fill = 0) %>%
+  group_by(dna) %>%
+  summarise(n_H = rowSums(across(where(is.numeric)), na.rm=TRUE)) %>%
+    filter(n_H > 1)
+  
+  return(nrow(counting_sims))
+}
+
+get_sims(comp = "BCCM082")
+get_sims("BCCM083")
+
+```
+# PE 5 Gene
+```{R}
+new_PE5 <- dupe_fin %>%
+  filter(V7 == "PE family protein  PE52C component of Type VII secretion system ESX3")
+
+ready_fasta_PE5 <- new_PE5 %>%
+  tidyr::unite(col = "Header", V14, gene, cat, V7, sep = "|") %>%
+  dplyr::mutate(
+    Header = stringr::str_replace_all(Header, " ", "_"),
+    "Space" = " ",
+    "Header" = stringr::str_c(">", Header)) %>%
+  dplyr::select(Header, dna, Space) %>% 
+  as.matrix() %>% t() %>%
+  as.character() %>% dplyr::as_tibble()
+
+ready_fasta_PE5 %>%
+  data.table::fwrite(
+    file = file.path(stem, "PE5_pangenome.fasta.gz"), compress = "gzip",
+    col.names = FALSE,
+    quote = FALSE, append = FALSE)
+```
+
+# id similarity between the genes
+
+```{text}
+all_gene_combinations <- combn(comb_genes$Header, 2) %>%
+  t()
+#
+# https://stackoverflow.com/questions/11535625/similarity-scores-based-on-string-comparison-in-r-edit-distance
+conduct_similarity <- function(row) {
+  two_genes <- comb_genes %>%
+    filter(Header %in% unlist(row)) %>%
+    select(dna) %>%
+    unlist()
+  levenshteinSim(two_genes[1], two_genes[2])
+}
+#
+sim_scores <- plyr::adply(all_gene_combinations, 1, conduct_similarity,
+                          .progress = "text") %>%
+  dplyr::select(-1) %>%
+  dplyr::rename(sim_score = dna1)
+#
+results <- all_gene_combinations %>%
+  as.data.frame() %>%
+  dplyr::bind_cols(sim_scores)
+#
+saveRDS(results, file.path(stem, "similarity_scores.RDS"))
+
+```

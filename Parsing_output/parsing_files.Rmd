@@ -1,0 +1,32 @@
+---
+title: "Parsing Files"
+author: "Aubrey Odom-Mabey"
+date: '2023-01-10'
+output: html_document
+---
+
+# Setup
+```{R}
+library(tidyverse)
+library(magrittr)
+```
+# Step 1: genbank files
+```{R}
+source("~/tuberculosis/work/aubrey/Alland_TB/Parsing_output/genbankr_copy/R/genbankReader.R")
+# Only need the genbankreader script!
+exp_genome <- genbankr::readGenBank("~/tuberculosis/work/aubrey/Alland_TB/Parsing_output/Mycobacterium tuberculosis VT3050.gb",
+                       partial = TRUE, verbose = TRUE, ret.seq = TRUE)@cds %>%
+  tibble::as_tibble() %>%
+  dplyr::select(product, start, end, strand, width)
+```
+
+# Step 2: gff annotation files
+```{R}
+gff_in <- "~/tuberculosis/work/aubrey/Alland_TB/Parsing_output/Mycobacterium tuberculosis VT3050.gff"
+
+gff_names <- read_delim(gff_in, skip = 1, delim = "\t", col_names = FALSE) %>%
+  dplyr::select(X9) %>% unlist() %>% unname() %>%
+  stringr::str_split(pattern = ";") %>%
+  sapply(function(x) x[[2]]) %>% str_remove("Name=")
+
+```

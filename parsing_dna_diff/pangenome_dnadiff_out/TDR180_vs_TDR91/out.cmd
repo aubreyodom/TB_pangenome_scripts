@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/TDR180_vs_TDR91/out assemblies/TDR180.fasta assemblies/TDR91.fasta

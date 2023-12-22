@@ -1,0 +1,289 @@
+---
+title: "validate_utility"
+author: "Aubrey Odom"
+date: "2023-08-28"
+output: html_document
+---
+
+# Setup
+
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(data.table)
+  library(Rsamtools)
+  library(patchwork)
+})
+```
+
+# Read in data
+
+```{R}
+stem <- "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Utility"
+al_stem <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Alignments"
+
+fl <- file.path(stem, "un_ERR2704680_BCCM_083.sorted.bam")
+bf1 <- BamFile(fl)
+bam_index1 <- file.path(stem, "un_ERR2704680_BCCM_083.sorted.bam.bai")
+
+f1_H <- file.path(al_stem, "ERR2704680_H37Rv_new.sorted.bam")
+bf1_H <- BamFile(f1_H)
+bam_index1_H <- file.path(al_stem, "ERR2704680_H37Rv_new.sorted.bam.bai")
+
+f2 <- file.path(stem, "un_ERR2704685_BCCM_082.sorted.bam")
+bf2 <- BamFile(f2)
+bam_index3 <- file.path(stem, "un_ERR2704685_BCCM_082.sorted.bam.bai")
+
+f2_H <- file.path(al_stem, "ERR2704685_H37Rv_new.sorted.bam")
+bf2_H <- BamFile(f2_H)
+bam_index2_H <- file.path(al_stem, "ERR2704685_H37Rv_new.sorted.bam.bai")
+
+f3 <- file.path(stem, "un_ERR2704704_BCCM_082.sorted.bam")
+bf3 <- BamFile(f3)
+bam_index3 <- file.path(stem, "un_ERR2704704_BCCM_082.sorted.bam.bai")
+
+f3_H <- file.path(al_stem, "ERR2704704_H37Rv_new.sorted.bam")
+bf3_H <- BamFile(f3_H)
+bam_index3_H <- file.path(al_stem, "ERR2704704_H37Rv_new.sorted.bam.bai")
+
+# PGRR realignment
+f1_P <- file.path(stem, "un_ERR2704685_pangenome.sorted.bam")
+bf1_P <- BamFile(f1_P)
+bam_index1_P <- file.path(stem, "un_ERR2704685_pangenome.sorted.bam.bai")
+
+f2_P <- file.path(stem, "un_ERR2704685_pangenome.sorted.bam")
+bf2_P <- BamFile(f2_P)
+bam_index2_P <- file.path(stem, "un_ERR2704685_pangenome.sorted.bam.bai")
+
+f3_P <- file.path(stem, "un_ERR2704685_pangenome.sorted.bam")
+bf3_P <- BamFile(f3_P)
+bam_index3_P <- file.path(stem, "un_ERR2704685_pangenome.sorted.bam.bai")
+  
+```
+
+
+# Read in gene position data from reference genomes of interest
+```{R}
+stem <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product"
+pangenome_pos <- fread(file.path(stem, "pangenome_no_seqs.csv")) %>%
+  as_tibble() %>%
+  select(V2, V3, V4, V5, V8)
+
+only_BCCM082 <- pangenome_pos %>%
+  filter(V8 == "BCCM_082")
+
+only_BCCM083 <- pangenome_pos %>%
+  filter(V8 == "BCCM_083")
+
+only_H <- pangenome_pos %>%
+  filter(V8 == "H37Rv_new")
+```
+
+# Plot
+
+## Function
+```{R}
+create_plot <- function(bf, bam_index, this_title, limited_pos, lim1 = 21000, lim2 = 23000) {
+  # Find locations of mapped reads
+  this_pileup <- pileup(bf, index = bam_index, scanBamParam = ScanBamParam(what = "pos"),
+         pileupParam = PileupParam())
+  
+  # Sample by 100 reads
+  onlyrows <- seq(1, max(this_pileup$pos), by = 50)
+  
+  p <- this_pileup %>%
+    filter(strand == "+",
+           pos %in% onlyrows) %>%
+  ggplot(aes(x = pos, y = count)) +
+    geom_bar(stat = "identity", alpha = 0.5) +
+    theme_classic() +
+    theme(axis.title.x = element_blank()) + #remove x axis labels
+    labs(title = this_title,
+         subtitle = "Unaligned to H37Rv.1 reference") +
+    xlim(c(lim1, lim2))
+  
+  nolisting <- limited_pos %>%
+    select(V4, V5) %>%
+    t() %>% as.data.frame() %>%
+    unlist() %>% unname()
+  
+  # Invert gene regions to mark intergenic regions
+  inverse <- c(min(this_pileup$pos), nolisting, max(this_pileup$pos)) %>%
+    matrix(byrow = TRUE, ncol = 2) %>%
+    as_tibble()
+  
+  #p2 <- inverse %>%
+  #  ggplot() +
+  #  geom_rect(aes(xmin = V1, xmax = V2,
+  #                ymin = 0, ymax = 1),
+  #            fill = "black",
+  #            color = "black") +
+  #  theme_void() +
+  #  theme(legend.position = "bottom") +
+  #  guides(fill = guide_legend(nrow = 3, byrow = TRUE)) +
+  #  xlim(c(lim1, lim2))
+  
+  p3 <- p +
+    geom_rect(data = inverse, inherit.aes=FALSE, 
+              aes(xmin = V1,
+                  xmax = V2,
+                  ymin = -Inf,
+                  ymax = Inf), fill='red', alpha= 0.2)
+  p3
+  
+  # Using patchwork library
+  #p / p2 + plot_layout(nrow = 2, heights = c(1, 0.1))
+}
+
+```
+
+
+```{R}
+create_plot(bf = bf3, bam_index = bam_index3, this_title = "Genomic alignments to BCCM 082",
+            limited_pos = only_BCCM082)
+create_plot(bf2, bam_index2, this_title = "Genomic alignments to BCCM 082",
+            limited_pos = only_BCCM082)
+create_plot(bf1, bam_index1, this_title = "Genomic alignments to BCCM 083",
+            limited_pos = only_BCCM083)
+```
+
+
+# Plot pileups
+
+BCCM 082 and 083 and H37Rv
+21637 23172 Serine/threonine phosphatase PPP (EC 3.1.3.16)
+
+Now need to call mutations using pileup and compare between the strains
+- Also what's up with the reference sequence
+
+## Extract specific PGRR gene
+```{R}
+# Nicotinamidase
+
+str_interest <- "Nicotinamidase"
+only_H %>%
+  filter(stringr::str_detect(V2, str_interest))
+
+# "Nicotinamidase (EC 3.5.1.19) @ Pyrazinamidase"
+
+# Grab all read names
+all_names <- scanBam(bf3_P, param = ScanBamParam(what = "rname")) %>%
+  unlist() 
+
+# Split read names with "|" separator
+all_names_split <- all_names %>%
+  stringr::str_split("\\|") %>%
+  unlist() %>% matrix(byrow = TRUE, ncol = 4) %>% as.data.frame()
+
+# This is the table of reads that aligned to which pncA gene
+# Note that none of the alignments included H37Rv genes
+all_names_split %>%
+  filter(str_detect(V4, str_interest))
+
+# NUmber of unique genes
+all_uniq <- unique(all_names) %>% as.character() 
+all_uniq[stringr::str_detect(all_uniq, str_interest)]
+
+# Do pileup across gene
+#this_pileup_P <- pileup(which_bf_p, scanBamParam = this_param) %>%
+#    mutate(genome = "PGRR")
+```
+
+## Function to plot
+```{R}
+# Add position to pileup
+plot_mutation <- function(pos1 = 21637, pos2 = 23172,
+                          this_gene = "Serine/threonine phosphatase PPP (EC 3.1.3.16)",
+                          rect_diff = 10, all_genes = only_H,
+                          which_bf = bf3,
+                          which_bf_h = bf3_H,
+                          this_pileup_P = NULL) {
+  pos <- IRanges::IRangesList("cluster_001_consensus_pilon_pilon_pilon" = 
+                                IRanges::IRanges(start = pos1, end = pos2))
+  
+  this_param <- ScanBamParam(what = "pos", which = pos)
+  this_pileup <- pileup(which_bf, scanBamParam = this_param) %>%
+    mutate(genome = "BCCM_082")
+
+  this_pileup_H <- pileup(which_bf_h, scanBamParam = this_param) %>%
+    mutate(genome = "H37Rv.1")
+  
+  to_plot <- bind_rows(this_pileup_H, this_pileup, this_pileup_P) %>%
+    arrange(pos) %>%
+    select(-c(which_label, seqnames)) %>%
+    filter(strand == "-")
+  
+  # Sort out mutations
+  pos_diffs <- to_plot %>%
+    group_by(pos) %>%
+    summarise(num_unique = length(unique(nucleotide)) > 1) %>%
+    filter(num_unique) %>%
+    select(pos)
+  
+  to_plot_summed <- to_plot %>%
+    group_by(pos, genome) %>%
+    summarise(count = sum(count))
+  
+  p <- to_plot_summed %>%
+    ggplot(aes(x = pos, y = count, fill = genome)) +
+    geom_bar(stat = "identity", alpha = 1) +
+    theme_classic() +
+    theme(axis.title.x = element_blank()) + #remove x axis labels
+    labs(title = paste("Plotting", this_gene),
+         subtitle = paste("Region", pos1, "to", pos2, "nt")) +
+    geom_rect(data = pos_diffs, inherit.aes=FALSE, 
+              aes(xmin = pos-rect_diff,
+                  xmax = pos+rect_diff,
+                  ymin = -Inf,
+                  ymax = Inf), fill='grey', alpha= 0.2) +
+    facet_wrap(~genome, nrow = 2)
+  
+  # Add on patchwork underneath
+  p2 <- all_genes %>%
+    ggplot() +
+    geom_rect(aes(xmin = V4, xmax = V5,
+                  ymin = 0, ymax = 1),
+              fill = "cornflowerblue",
+              color = "cornflowerblue") +
+  theme_void() +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow = 3, byrow = TRUE)) +
+  xlim(c(pos1, pos2))
+  
+  p / p2 + plot_layout(nrow = 2, heights = c(1, 0.1))
+}
+```
+
+
+```{R}
+
+# BF 3
+plot_mutation(rect_diff = 2)
+plot_mutation(1, 1524, this_gene = "Chromosomal replication initiator protein DnaA",
+              rect_diff = 1)
+plot_mutation(1, 100, this_gene = "Chromosomal replication initiator protein DnaA",
+              rect_diff = 1)
+plot_mutation(2290254, 2290814	, this_gene = "Nicotinamidase_EC_35119__Pyrazinamidase", rect_diff = 1)
+plot_mutation(10000, 15000, this_gene = "general coordinates")
+
+```
+
+```{R}
+# BF 1
+plot_mutation(rect_diff = 2, which_bf = bf1, which_bf_h = bf1_H)
+plot_mutation(1, 5000, this_gene = "general coordinates", which_bf = bf1, which_bf_h = bf1_H)
+plot_mutation(5000, 10000, this_gene = "general coordinates", which_bf = bf1, which_bf_h = bf1_H)
+plot_mutation(10000, 15000, this_gene = "general coordinates", which_bf = bf1, which_bf_h = bf1_H)
+```
+
+```{R}
+# BF 2
+plot_mutation(rect_diff = 2, which_bf = bf2, which_bf_h = bf2_H)
+plot_mutation(1, 5000, this_gene = "general coordinates", which_bf = bf2, which_bf_h = bf2_H)
+plot_mutation(5000, 10000, this_gene = "general coordinates", which_bf = bf2, which_bf_h = bf2_H)
+plot_mutation(10000, 15000, this_gene = "general coordinates", which_bf = bf2, which_bf_h = bf2_H)
+```
+
+
+
+

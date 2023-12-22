@@ -1,0 +1,42 @@
+---
+title: "Panaroo Fix"
+author: "Aubrey Odom"
+date: "2023-09-06"
+output: html_document
+---
+
+Trying to fix panaroo
+
+# Setup
+
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+})
+```
+
+# Read in data
+```{R}
+stem <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Panaroo"
+cl_ann <- readxl::read_xlsx(file.path(stem, "clusters_annotated.xlsx"), na = "NA")
+gprab <- readxl::read_xlsx(file.path(stem, "gene_presence_absence (1).xlsx"), na = "NA")
+
+# PGRR csv of annotation data
+stem_2 <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product"
+pgrr <- readr::read_csv(file.path(stem_2, "pangenome_no_seqs.csv"), col_names = FALSE) %>%
+  mutate(X1 = stringr::str_remove(X1, "\\("))
+```
+
+let's look at the pgrr and see if the groups line up with gene numbers
+
+```{R}
+cl_ann_2 <- cl_ann %>%
+  separate(Gene, into = c(NA, "Gene_grp"), sep = "group_") %>%
+  mutate(Gene_grp = as.numeric(Gene_grp)) %>%
+  arrange(Gene_grp)
+
+cl_ann_2 %>%
+  filter(is.na(Name))
+
+sum(cl_ann_2$Name %in% pgrr$X2)
+```

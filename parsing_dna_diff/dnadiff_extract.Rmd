@@ -1,0 +1,104 @@
+---
+title: "Parse through DNA diff ouput"
+author: "Aubrey Odom-Mabey"
+date: "2023-04-21"
+output: html_document
+---
+
+```{R}
+# Libraries
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(magrittr)
+})
+
+```
+
+# Obtain all file paths
+```{R}
+#stem <- "~/tuberculosis/work/aubrey/Alland_TB/parsing_dna_diff/pangenome_dnadiff_out"
+stem <- "~/tuberculosis/work/aubrey/Alland_TB/parsing_dna_diff/dnadiff_m.can_out"
+all_files <- list.files(stem, pattern = "*out.report", all.files = TRUE,
+                        full.names = FALSE, recursive = TRUE)
+```
+
+# Function
+```{R}
+dnadiff_extract <- function(input_file) {
+  all_lines <- readLines(file.path(stem, input_file)) %>% stringi::stri_remove_empty()
+
+  # Extract fasta name
+  fasta_loc <- all_lines %>% extract(1) %>% stringr::str_split(" ") %>%
+    unlist() %>% stringr::str_split_i("/", -1) %>% stringr::str_remove(".fasta") %>%
+    stringr::str_replace("_", " ")
+    
+  # Split by section
+  all_lines_2 <- all_lines %>% magrittr::extract(-c(1:3))
+  bracket_ind <-  all_lines_2 %>% stringr::str_starts("\\[")
+  all_split <- split(all_lines_2, cumsum(bracket_ind))
+  names(all_split) <- all_lines_2[bracket_ind] %>%
+    stringr::str_remove_all("\\[|\\]")
+  all_split_2 <- all_split %>% lapply(function(x) x[-1])
+  
+  # Convert lines into tables
+  this_name <- names(all_split_2)[1]
+  convert_table <- function(section_name) {
+    this_df <- all_split_2[[section_name]]
+    read_table(this_df, col_names = c(section_name, "ref", "query"))
+  }
+  final_split <- plyr::llply(names(all_split_2), convert_table) %>%
+    set_names(names(all_split))
+  
+  # Return information of interest
+  fasta_files <- fasta_loc %>% set_names(c("ref", "query"))
+  output <- final_split$SNPs %>%
+    filter(SNPs %in% c("TotalSNPs", "TotalIndels")) %>%
+    column_to_rownames("SNPs") %>% select(ref) %>% t() %>% as_tibble() %>% unlist()
+  
+  return(append(fasta_files, output))
+}
+
+input_file <- all_files[1]
+```
+
+
+# Execute function
+```{R}
+results <- plyr::ldply(all_files, dnadiff_extract,
+                       .progress = "text")
+```
+# Put results into a matrix
+```{R}
+pool_mat <- function(results, stat) {
+  all_ref <- unique(c(results$ref, results$query))
+  n <- length(all_ref)
+  combined_vals <- matrix(0, n, n, dimnames = list(all_ref, all_ref)) 
+  for (row_num in seq_len(nrow(results))) {
+    this_row <- results[row_num, ]
+    combined_vals[this_row$ref, this_row$query] <- this_row[, stat] %>% as.integer()
+  }
+  return(combined_vals)
+}
+
+snp_mat <- pool_mat(results, "TotalSNPs") %>%
+  Matrix::forceSymmetric(uplo = "U") %>% as.matrix()
+indel_mat <- pool_mat(results, "TotalIndels") %>% 
+  Matrix::forceSymmetric(uplo = "U") %>% as.matrix()
+
+# Reorder by names
+vec <- readxl::read_xlsx(file.path(stem, "snp and indel tables.xlsx"))[, 1] %>% unlist() %>% unname() %>% unique() %>%
+  append("M.can.1")
+
+ind <- match(vec, rownames(snp_mat)) %>% purrr::discard(is.na)
+snp_mat_new <- snp_mat[ind, ind]
+indel_mat_new <- indel_mat[ind, ind]
+```
+
+
+```{R}
+write.csv(snp_mat_new, "~/tuberculosis/work/aubrey/Alland_TB/parsing_dna_diff/snp_dnadiff_mat_m_can.csv")
+write.csv(indel_mat_new, "~/tuberculosis/work/aubrey/Alland_TB/parsing_dna_diff/indel_dnadiff_mat_m_can.csv")
+```
+
+
+

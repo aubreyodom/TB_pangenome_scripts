@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/BCCM_083_vs_TMC102/out assemblies/BCCM_083.fasta assemblies/TMC102.fasta

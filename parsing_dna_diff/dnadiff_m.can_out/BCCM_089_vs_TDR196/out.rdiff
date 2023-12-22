@@ -1,0 +1,118 @@
+cluster_001_consensus_pilon_pilon_pilon	JMP	1595	1591	-3
+cluster_001_consensus_pilon_pilon_pilon	GAP	39273	38961	-311	-255	-56
+cluster_001_consensus_pilon_pilon_pilon	DUP	69759	79846	10088
+cluster_001_consensus_pilon_pilon_pilon	BRK	79847	80455	609
+cluster_001_consensus_pilon_pilon_pilon	DUP	80456	80644	189
+cluster_001_consensus_pilon_pilon_pilon	BRK	80645	81197	553
+cluster_001_consensus_pilon_pilon_pilon	DUP	81198	82935	1738
+cluster_001_consensus_pilon_pilon_pilon	BRK	82936	83306	371
+cluster_001_consensus_pilon_pilon_pilon	GAP	266053	266050	-2	-597	595
+cluster_001_consensus_pilon_pilon_pilon	DUP	339797	341839	2043
+cluster_001_consensus_pilon_pilon_pilon	DUP	340739	342470	1732
+cluster_001_consensus_pilon_pilon_pilon	GAP	430918	431048	131	-25	156
+cluster_001_consensus_pilon_pilon_pilon	GAP	477381	477362	-18	66	-84
+cluster_001_consensus_pilon_pilon_pilon	DUP	479066	480420	1355
+cluster_001_consensus_pilon_pilon_pilon	JMP	582579	582483	-95
+cluster_001_consensus_pilon_pilon_pilon	DUP	583096	584450	1355
+cluster_001_consensus_pilon_pilon_pilon	GAP	843316	843299	-16	209	-225
+cluster_001_consensus_pilon_pilon_pilon	GAP	847142	847027	-114	-204	90
+cluster_001_consensus_pilon_pilon_pilon	DUP	857193	858547	1355
+cluster_001_consensus_pilon_pilon_pilon	JMP	897256	897251	-4
+cluster_001_consensus_pilon_pilon_pilon	INV	897486	897483	-2
+cluster_001_consensus_pilon_pilon_pilon	INV	898842	898840	-1
+cluster_001_consensus_pilon_pilon_pilon	GAP	953015	953012	-2	2828	-2830
+cluster_001_consensus_pilon_pilon_pilon	DUP	964944	965100	157
+cluster_001_consensus_pilon_pilon_pilon	GAP	969747	969652	-94	-22	-72
+cluster_001_consensus_pilon_pilon_pilon	GAP	1195085	1196203	1119	-842	1961
+cluster_001_consensus_pilon_pilon_pilon	DUP	1217653	1217869	217
+cluster_001_consensus_pilon_pilon_pilon	GAP	1222924	1222904	-19	17	-36
+cluster_001_consensus_pilon_pilon_pilon	GAP	1310637	1310531	-105	-43	-62
+cluster_001_consensus_pilon_pilon_pilon	GAP	1390344	1390255	-88	-190	102
+cluster_001_consensus_pilon_pilon_pilon	GAP	1446615	1446341	-273	-120	-153
+cluster_001_consensus_pilon_pilon_pilon	JMP	1548903	1549045	143
+cluster_001_consensus_pilon_pilon_pilon	GAP	1649863	1649849	-13	-119	106
+cluster_001_consensus_pilon_pilon_pilon	JMP	1662618	1662613	-4
+cluster_001_consensus_pilon_pilon_pilon	DUP	1700265	1701619	1355
+cluster_001_consensus_pilon_pilon_pilon	GAP	1717727	1717726	0	790	-790
+cluster_001_consensus_pilon_pilon_pilon	GAP	1780203	1780207	5	-70	75
+cluster_001_consensus_pilon_pilon_pilon	BRK	1785450	1786520	1071
+cluster_001_consensus_pilon_pilon_pilon	DUP	1786521	1786751	231
+cluster_001_consensus_pilon_pilon_pilon	BRK	1786752	1786812	61
+cluster_001_consensus_pilon_pilon_pilon	DUP	1786813	1788989	2177
+cluster_001_consensus_pilon_pilon_pilon	BRK	1788990	1792047	3058
+cluster_001_consensus_pilon_pilon_pilon	DUP	1792048	1792489	442
+cluster_001_consensus_pilon_pilon_pilon	BRK	1792490	1794684	2195
+cluster_001_consensus_pilon_pilon_pilon	GAP	1962011	1961805	-205	-91	-114
+cluster_001_consensus_pilon_pilon_pilon	GAP	1989773	1989602	-170	-248	78
+cluster_001_consensus_pilon_pilon_pilon	BRK	1993745	1994564	820
+cluster_001_consensus_pilon_pilon_pilon	DUP	1994565	1995920	1356
+cluster_001_consensus_pilon_pilon_pilon	DUP	1995920	1996015	96
+cluster_001_consensus_pilon_pilon_pilon	JMP	1996016	1996027	12
+cluster_001_consensus_pilon_pilon_pilon	GAP	2059276	2059250	-25	17	-42
+cluster_001_consensus_pilon_pilon_pilon	GAP	2143447	2143441	-5	-50	45
+cluster_001_consensus_pilon_pilon_pilon	GAP	2161115	2160980	-134	-410	276
+cluster_001_consensus_pilon_pilon_pilon	JMP	2161746	2161590	-155
+cluster_001_consensus_pilon_pilon_pilon	GAP	2163237	2162979	-257	-182	-75
+cluster_001_consensus_pilon_pilon_pilon	JMP	2164047	2163716	-330
+cluster_001_consensus_pilon_pilon_pilon	INV	2164397	2164396	0
+cluster_001_consensus_pilon_pilon_pilon	INV	2165752	2165751	0
+cluster_001_consensus_pilon_pilon_pilon	DUP	2173275	2174630	1356
+cluster_001_consensus_pilon_pilon_pilon	GAP	2215522	2215520	-1	540	-541
+cluster_001_consensus_pilon_pilon_pilon	JMP	2268313	2268306	-6
+cluster_001_consensus_pilon_pilon_pilon	JMP	2273785	2273778	-6
+cluster_001_consensus_pilon_pilon_pilon	DUP	2350433	2350802	370
+cluster_001_consensus_pilon_pilon_pilon	BRK	2350803	2351003	201
+cluster_001_consensus_pilon_pilon_pilon	DUP	2351004	2351645	642
+cluster_001_consensus_pilon_pilon_pilon	BRK	2351646	2351842	197
+cluster_001_consensus_pilon_pilon_pilon	JMP	2413094	2412982	-111
+cluster_001_consensus_pilon_pilon_pilon	GAP	2541913	2541648	-264	-211	-53
+cluster_001_consensus_pilon_pilon_pilon	GAP	2545133	2545842	710	0	710
+cluster_001_consensus_pilon_pilon_pilon	GAP	2600705	2599751	-953	-1	-952
+cluster_001_consensus_pilon_pilon_pilon	DUP	2642370	2642476	107
+cluster_001_consensus_pilon_pilon_pilon	BRK	2642477	2643321	845
+cluster_001_consensus_pilon_pilon_pilon	DUP	2643322	2644455	1134
+cluster_001_consensus_pilon_pilon_pilon	JMP	2644456	2644433	-22
+cluster_001_consensus_pilon_pilon_pilon	GAP	2713869	2713804	-64	-121	57
+cluster_001_consensus_pilon_pilon_pilon	GAP	2804527	2804510	-16	20	-36
+cluster_001_consensus_pilon_pilon_pilon	GAP	3003474	3003308	-165	-267	102
+cluster_001_consensus_pilon_pilon_pilon	DUP	3055820	3057176	1357
+cluster_001_consensus_pilon_pilon_pilon	GAP	3068556	3068552	-3	71	-74
+cluster_001_consensus_pilon_pilon_pilon	DUP	3128915	3130271	1357
+cluster_001_consensus_pilon_pilon_pilon	BRK	3130272	3130294	23
+cluster_001_consensus_pilon_pilon_pilon	DUP	3130295	3130704	410
+cluster_001_consensus_pilon_pilon_pilon	DUP	3130297	3131359	1063
+cluster_001_consensus_pilon_pilon_pilon	DUP	3131322	3132237	916
+cluster_001_consensus_pilon_pilon_pilon	JMP	3132238	3136587	4350
+cluster_001_consensus_pilon_pilon_pilon	JMP	3164598	3164552	-45
+cluster_001_consensus_pilon_pilon_pilon	JMP	3241761	3241264	-496
+cluster_001_consensus_pilon_pilon_pilon	GAP	3345815	3345572	-242	-413	171
+cluster_001_consensus_pilon_pilon_pilon	JMP	3387458	3386836	-621
+cluster_001_consensus_pilon_pilon_pilon	JMP	3388639	3388635	-3
+cluster_001_consensus_pilon_pilon_pilon	JMP	3500260	3500259	0
+cluster_001_consensus_pilon_pilon_pilon	JMP	3501615	3501614	0
+cluster_001_consensus_pilon_pilon_pilon	JMP	3502304	3502299	-4
+cluster_001_consensus_pilon_pilon_pilon	GAP	3509627	3509623	-3	1469	-1472
+cluster_001_consensus_pilon_pilon_pilon	GAP	3601842	3601701	-140	-196	56
+cluster_001_consensus_pilon_pilon_pilon	GAP	3671309	3671265	-43	-106	63
+cluster_001_consensus_pilon_pilon_pilon	GAP	3698389	3698326	-62	54	-116
+cluster_001_consensus_pilon_pilon_pilon	BRK	3721272	3721498	227
+cluster_001_consensus_pilon_pilon_pilon	DUP	3721499	3722855	1357
+cluster_001_consensus_pilon_pilon_pilon	JMP	3722856	3722854	-1
+cluster_001_consensus_pilon_pilon_pilon	JMP	3809475	3809469	-5
+cluster_001_consensus_pilon_pilon_pilon	GAP	3832412	3832039	-372	-24	-348
+cluster_001_consensus_pilon_pilon_pilon	JMP	3856503	3856498	-4
+cluster_001_consensus_pilon_pilon_pilon	GAP	3940475	3940524	50	-34	84
+cluster_001_consensus_pilon_pilon_pilon	GAP	3942238	3942111	-126	-216	90
+cluster_001_consensus_pilon_pilon_pilon	DUP	3947262	3947937	676
+cluster_001_consensus_pilon_pilon_pilon	JMP	3954096	3953690	-405
+cluster_001_consensus_pilon_pilon_pilon	DUP	3959211	3959932	722
+cluster_001_consensus_pilon_pilon_pilon	DUP	3959821	3960643	823
+cluster_001_consensus_pilon_pilon_pilon	JMP	3960644	3960180	-463
+cluster_001_consensus_pilon_pilon_pilon	GAP	3965496	3965491	-4	1294	-1298
+cluster_001_consensus_pilon_pilon_pilon	JMP	4064484	4064237	-246
+cluster_001_consensus_pilon_pilon_pilon	GAP	4098491	4098407	-83	-26	-57
+cluster_001_consensus_pilon_pilon_pilon	GAP	4166814	4166747	-66	-9	-57
+cluster_001_consensus_pilon_pilon_pilon	GAP	4168317	4168029	-287	-228	-59
+cluster_001_consensus_pilon_pilon_pilon	GAP	4200608	4200606	-1	1109	-1110
+cluster_001_consensus_pilon_pilon_pilon	DUP	4330308	4331662	1355
+cluster_001_consensus_pilon_pilon_pilon	GAP	4364993	4364891	-101	-152	51

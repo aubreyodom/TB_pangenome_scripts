@@ -1,0 +1,101 @@
+---
+title: "Create PPE Database"
+author: "Aubrey Odom-Mabey"
+date: "2023-01-16"
+output: html_document
+---
+
+# Setup
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(magrittr)
+})
+
+ stem <- "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/02_23_23_coverage"
+source(file.path(stem, "read_jank_ganbank.R"))
+```
+
+# Trial 1 - H37Rv genbank
+```{R}
+# Get genbank parsed
+exp_genome <- readGenBank("~/tuberculosis/work/aubrey/Alland_TB/H37Rv_genbank.gb",
+                          partial = TRUE, verbose = TRUE, ret.seq = TRUE)@cds %>%
+  tibble::as_tibble() %>%
+  dplyr::select(seqnames, start, end, width, strand, gene, gene_synonym,
+                gene_id, locus_tag, inference, product,
+                protein_id, db_xref, note, translation)
+
+# Only keep PE/PPE genes
+  all_matches <- sapply(c("PPE", "PE", "PE_PGRS", "PE_MPTR"),
+         function(x) stringr::str_starts(exp_genome$gene, x)) %>% rowSums()
+  all_matches[is.na(all_matches)] <- 0
+pe_ppe_data <- exp_genome %>% filter(all_matches > 0) %>%
+  mutate(db_xref = unlist(db_xref))
+# Fix inference category
+fix_inf <- lapply(pe_ppe_data$inference, function(x) c(x, "")) %>% sapply(function(x) x[[1]])
+fix_inf[fix_inf == ""] <- NA
+pe_ppe_data$inference <- fix_inf
+
+# Make sure it's not a data frame of lists
+final_df <- apply(pe_ppe_data, 2, unlist) %>% as.data.frame()
+
+# Could pull out the seq using start and end using stringset
+
+fasta_H37Rv <- "~/tuberculosis/work/aubrey/Alland_TB/paralogs_work/old_ref_genome/old_ref.fasta"
+strset_H37Rv <- Biostrings::readDNAStringSet(fasta_H37Rv)[[1]]
+
+# Get chars
+to_iterate <- seq_len(nrow(final_df))
+get_seq <- function(i) {
+  inds <- final_df %>% dplyr::select(start, end) %>% filter(to_iterate == i) %>% unlist() %>%
+    as.numeric()
+  strset_H37Rv[seq(inds[1], inds[2])] %>% as.character()
+}
+final_df$sequence <- sapply(to_iterate, get_seq)
+
+write_csv(final_df, "Prelim_DB_H37Rv.csv")
+
+```
+
+```{R}
+stem <- "~/tuberculosis/work/aubrey/Alland_TB"
+gb_file <- file.path(stem, "build_db/CDC1551.gb")
+fasta_file <- file.path(stem, "build_db/CDC1551_sequence.fasta")
+
+parse_gbk <- function(gb_file, fasta_file) {
+  # Get genbank parsed
+  exp_genome <- readGenBank(gb_file, partial = TRUE, verbose = TRUE,
+                            ret.seq = TRUE)@cds %>%
+    tibble::as_tibble() %>%
+    dplyr::select(seqnames, start, end, width, strand, gene,
+                  gene_id, locus_tag, product,
+                  protein_id, note, translation)
+  
+  # Only keep PE/PPE genes
+    all_matches <- sapply(c("PPE", "PE"),
+           function(x) stringr::str_starts(exp_genome$gene, x)) %>% rowSums()
+    all_matches[is.na(all_matches)] <- 0
+  pe_ppe_data <- exp_genome %>% filter(all_matches > 0)
+  
+  # Make sure it's not a data frame of lists
+  final_df <- apply(pe_ppe_data, 2, unlist) %>% as.data.frame()
+  
+  # Pull out the sequence from the fasta file
+  strset <- Biostrings::readDNAStringSet(fasta_file)[[1]]
+  to_iterate <- seq_len(nrow(final_df))
+  get_seq <- function(i) {
+    inds <- final_df %>% dplyr::select(start, end) %>% filter(to_iterate == i) %>% unlist() %>%
+      as.numeric()
+    strset[seq(inds[1], inds[2])] %>% as.character()
+  }
+  final_df$sequence <- sapply(to_iterate, get_seq)
+  
+  return(final_df)
+}
+
+  # Output file
+  write_csv(final_df, "Prelim_DB_H37Rv.csv")
+```
+
+

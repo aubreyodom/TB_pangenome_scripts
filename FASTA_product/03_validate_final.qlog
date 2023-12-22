@@ -1,0 +1,162 @@
+==========================================================
+Start date : Wed Aug 30 20:16:09 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+pan_ERR2704685_BCCM_082
+Else invoked
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Unaligned/UN_ERR2704685_pangenome.fastq.2.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704685_BCCM_082.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704685_BCCM_082.bam"
+pan_ERR2704704_BCCM_082
+Else invoked
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Unaligned/UN_ERR2704704_pangenome.fastq.2.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704704_BCCM_082.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704704_BCCM_082.bam"
+pan_ERR2704680_BCCM_083
+Else invoked
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Unaligned/UN_ERR2704680_pangenome.fastq.2.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704680_BCCM_083.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704680_BCCM_083.bam"
+pannb_ERR2704685_BCCM_082
+Else invoked
+181258 reads; of these:
+  181258 (100.00%) were paired; of these:
+    179731 (99.16%) aligned concordantly 0 times
+    1474 (0.81%) aligned concordantly exactly 1 time
+    53 (0.03%) aligned concordantly >1 times
+    ----
+    179731 pairs aligned concordantly 0 times; of these:
+      127495 (70.94%) aligned discordantly 1 time
+    ----
+    52236 pairs aligned 0 times concordantly or discordantly; of these:
+      104472 mates make up the pairs; of these:
+        78539 (75.18%) aligned 0 times
+        13329 (12.76%) aligned exactly 1 time
+        12604 (12.06%) aligned >1 times
+78.34% overall alignment rate
+pannb_ERR2704704_BCCM_082
+Else invoked
+231514 reads; of these:
+  231514 (100.00%) were paired; of these:
+    227036 (98.07%) aligned concordantly 0 times
+    4332 (1.87%) aligned concordantly exactly 1 time
+    146 (0.06%) aligned concordantly >1 times
+    ----
+    227036 pairs aligned concordantly 0 times; of these:
+      195670 (86.18%) aligned discordantly 1 time
+    ----
+    31366 pairs aligned 0 times concordantly or discordantly; of these:
+      62732 mates make up the pairs; of these:
+        22290 (35.53%) aligned 0 times
+        22807 (36.36%) aligned exactly 1 time
+        17635 (28.11%) aligned >1 times
+95.19% overall alignment rate
+pannb_ERR2704680_BCCM_083
+Else invoked
+322431 reads; of these:
+  322431 (100.00%) were paired; of these:
+    319174 (98.99%) aligned concordantly 0 times
+    3144 (0.98%) aligned concordantly exactly 1 time
+    113 (0.04%) aligned concordantly >1 times
+    ----
+    319174 pairs aligned concordantly 0 times; of these:
+      276073 (86.50%) aligned discordantly 1 time
+    ----
+    43101 pairs aligned 0 times concordantly or discordantly; of these:
+      86202 mates make up the pairs; of these:
+        42230 (48.99%) aligned 0 times
+        22840 (26.50%) aligned exactly 1 time
+        21132 (24.51%) aligned >1 times
+93.45% overall alignment rate
+DONE!
+==========================================================
+Start date : Wed Aug 30 20:24:04 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+pan_ERR2704685_BCCM_082
+Else invoked
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Unaligned/UN_un_ERR2704685_pangenome.fastq.2.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704685_BCCM_082.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704685_BCCM_082.bam"
+pan_ERR2704704_BCCM_082
+Else invoked
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Unaligned/UN_un_ERR2704704_pangenome.fastq.2.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704704_BCCM_082.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704704_BCCM_082.bam"
+pan_ERR2704680_BCCM_083
+Else invoked
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Unaligned/UN_un_ERR2704680_pangenome.fastq.2.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704680_BCCM_083.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Final/pan_ERR2704680_BCCM_083.bam"
+pannb_ERR2704685_BCCM_082
+Else invoked
+181258 reads; of these:
+  181258 (100.00%) were paired; of these:
+    179731 (99.16%) aligned concordantly 0 times
+    1474 (0.81%) aligned concordantly exactly 1 time
+    53 (0.03%) aligned concordantly >1 times
+    ----
+    179731 pairs aligned concordantly 0 times; of these:
+      127495 (70.94%) aligned discordantly 1 time
+    ----
+    52236 pairs aligned 0 times concordantly or discordantly; of these:
+      104472 mates make up the pairs; of these:
+        78539 (75.18%) aligned 0 times
+        13329 (12.76%) aligned exactly 1 time
+        12604 (12.06%) aligned >1 times
+78.34% overall alignment rate
+pannb_ERR2704704_BCCM_082
+Else invoked
+231514 reads; of these:
+  231514 (100.00%) were paired; of these:
+    227036 (98.07%) aligned concordantly 0 times
+    4332 (1.87%) aligned concordantly exactly 1 time
+    146 (0.06%) aligned concordantly >1 times
+    ----
+    227036 pairs aligned concordantly 0 times; of these:
+      195670 (86.18%) aligned discordantly 1 time
+    ----
+    31366 pairs aligned 0 times concordantly or discordantly; of these:
+      62732 mates make up the pairs; of these:
+        22290 (35.53%) aligned 0 times
+        22807 (36.36%) aligned exactly 1 time
+        17635 (28.11%) aligned >1 times
+95.19% overall alignment rate
+pannb_ERR2704680_BCCM_083
+Else invoked
+322431 reads; of these:
+  322431 (100.00%) were paired; of these:
+    319174 (98.99%) aligned concordantly 0 times
+    3144 (0.98%) aligned concordantly exactly 1 time
+    113 (0.04%) aligned concordantly >1 times
+    ----
+    319174 pairs aligned concordantly 0 times; of these:
+      276073 (86.50%) aligned discordantly 1 time
+    ----
+    43101 pairs aligned 0 times concordantly or discordantly; of these:
+      86202 mates make up the pairs; of these:
+        42230 (48.99%) aligned 0 times
+        22840 (26.50%) aligned exactly 1 time
+        21132 (24.51%) aligned >1 times
+93.45% overall alignment rate
+DONE!

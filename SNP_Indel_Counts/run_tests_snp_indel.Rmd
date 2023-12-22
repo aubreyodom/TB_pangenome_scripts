@@ -1,0 +1,86 @@
+---
+title: "SNP Testing"
+author: "Aubrey Odom"
+date: "2023-08-02"
+output: html_document
+---
+
+# Setup
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(magrittr)
+})
+```
+
+
+# Read in data
+```{R}
+stem <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/SNP_Indel_Counts"
+dat1 <- readxl::read_xlsx(file.path(stem, "Indels Relative to H37RV Raw Data.xlsx"))
+
+dat2 <- readxl::read_xlsx(file.path(stem, "Interlineage Indels Raw Data.xlsx"))
+
+dat3 <- readxl::read_xlsx(file.path(stem, "Interlineage SNPs Raw Data.xlsx"))
+
+dat4 <- readxl::read_xlsx(file.path(stem, "SNPs Relative to H37RV Raw Data.xlsx"))
+```
+
+# Goal
+The goal of this analysis is to compare the SNPs and indels between the lineages.
+- Do we need to normalize the data to account for the differences in the number of samples
+
+Compare numbers in each lineage against each other.
+- E.g. L1 SNPs vs L2 SNPs but L1 has 6 members and L2 has 9
+
+# Data exploration
+
+```{R}
+View(dat1)
+
+# Check normality of all data...
+apply(dat1, 2, log) %>%
+  apply(2, hist)
+
+# I don't think these are normally distributed
+# Stick to t-tests
+```
+
+
+```{R}
+# Initialize all combinations
+# Had to exclude lineage 7 because only one observation
+
+all_combos <- combn(c(1:6), 2) %>%
+  t() %>%
+  # Init results dataframe
+  as.data.frame() %>%
+  magrittr::set_colnames(c("Lineage X", "Lineage Y"))
+
+test_all <- function(input, dat) {
+  res <- t.test(dat[, input[, 1]], dat[, input[, 2]])
+  return(res$p.value)
+}
+
+output1 <- plyr::adply(all_combos, 1, function(x) test_all(x, dat1)) %>%
+  mutate(adj.p = p.adjust(V1, "fdr") %>% round(4)) %>%
+  mutate(V1 = round(V1, 4))
+
+output2 <- plyr::adply(all_combos, 1, function(x) test_all(x, dat2)) %>%
+  mutate(adj.p = p.adjust(V1, "fdr") %>% round(4)) %>%
+  mutate(V1 = round(V1, 4))
+
+output3 <- plyr::adply(all_combos, 1, function(x) test_all(x, dat3)) %>%
+  mutate(adj.p = p.adjust(V1, "fdr") %>% round(4)) %>%
+  mutate(V1 = round(V1, 4))
+
+output4 <- plyr::adply(all_combos, 1, function(x) test_all(x, dat4)) %>%
+  mutate(adj.p = p.adjust(V1, "fdr") %>% round(4)) %>%
+  mutate(V1 = round(V1, 4))
+
+list("Indels Relative to H37RV Raw Data" = output1, "Interlineage Indels Raw Data"= output2, "Interlineage SNPs Raw Data" = output3, "SNPs Relative to H37RV Raw Data" = output4) %>%
+writexl::write_xlsx(path = file.path(stem, "ttestres_lineage_differences.xlsx"))
+```
+
+
+# T test

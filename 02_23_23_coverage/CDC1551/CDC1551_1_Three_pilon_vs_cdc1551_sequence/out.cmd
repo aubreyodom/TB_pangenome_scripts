@@ -1,0 +1,1 @@
+dnadiff -p bact_build_dnadiff_out/CDC1551_1_Three_pilon_vs_cdc1551_sequence/out assemblies/CDC1551_1_Three_pilon.fasta assemblies/cdc1551_sequence.fasta

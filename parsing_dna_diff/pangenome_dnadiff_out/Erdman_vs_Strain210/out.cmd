@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/Erdman_vs_Strain210/out assemblies/Erdman.1.fasta assemblies/Strain210.1.fasta

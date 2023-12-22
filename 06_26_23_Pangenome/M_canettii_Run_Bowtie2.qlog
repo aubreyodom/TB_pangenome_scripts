@@ -1,0 +1,144 @@
+==========================================================
+Start date : Tue Jun 27 01:00:34 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+Mcanettii_M.can.1
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam": No such file or directory
+Mcanettii_Mcan2_Three_pilon
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam": No such file or directory
+DONE!
+==========================================================
+Start date : Wed Jun 28 17:09:25 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+Mcanettii_M.can.1
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam": No such file or directory
+Mcanettii_Mcan2_Three_pilon
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam": No such file or directory
+DONE!
+==========================================================
+Start date : Thu Jun 29 15:19:40 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+Mcanettii_M.can.1
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam": No such file or directory
+Mcanettii_Mcan2_Three_pilon
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam": No such file or directory
+DONE!
+==========================================================
+Start date : Thu Jun 29 15:27:26 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+Mcanettii_M.can.1
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_M.can.1.sorted.bam": No such file or directory
+Mcanettii_Mcan2_Three_pilon
+Starting alignment
+stat: Bad file descriptor
+Warning: Could not open read file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/M.canettii/2888_3_S5_R2_001_Canettii.fastq.gz" for reading; skipping...
+Error: No input read files were valid
+(ERR): bowtie2-align exited with value 1
+[main_samview] fail to read the header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sam".
+samtools sort: failed to read header from "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.bam"
+[E::hts_open_format] Failed to open file "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam" : No such file or directory
+samtools index: failed to open "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/06_26_23_Pangenome/Alignments/Mcanettii_Mcan2_Three_pilon.sorted.bam": No such file or directory
+DONE!
+==========================================================
+Start date : Thu Jun 29 16:52:59 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+Mcanettii_M.can.1
+Starting alignment
+831832 reads; of these:
+  831832 (100.00%) were paired; of these:
+    148079 (17.80%) aligned concordantly 0 times
+    645127 (77.55%) aligned concordantly exactly 1 time
+    38626 (4.64%) aligned concordantly >1 times
+    ----
+    148079 pairs aligned concordantly 0 times; of these:
+      123123 (83.15%) aligned discordantly 1 time
+    ----
+    24956 pairs aligned 0 times concordantly or discordantly; of these:
+      49912 mates make up the pairs; of these:
+        21939 (43.96%) aligned 0 times
+        14750 (29.55%) aligned exactly 1 time
+        13223 (26.49%) aligned >1 times
+98.68% overall alignment rate
+Mcanettii_Mcan2_Three_pilon
+Starting alignment
+831832 reads; of these:
+  831832 (100.00%) were paired; of these:
+    148079 (17.80%) aligned concordantly 0 times
+    645127 (77.55%) aligned concordantly exactly 1 time
+    38626 (4.64%) aligned concordantly >1 times
+    ----
+    148079 pairs aligned concordantly 0 times; of these:
+      123123 (83.15%) aligned discordantly 1 time
+    ----
+    24956 pairs aligned 0 times concordantly or discordantly; of these:
+      49912 mates make up the pairs; of these:
+        21939 (43.96%) aligned 0 times
+        14750 (29.55%) aligned exactly 1 time
+        13223 (26.49%) aligned >1 times
+98.68% overall alignment rate
+DONE!

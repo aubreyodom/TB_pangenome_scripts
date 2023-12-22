@@ -1,0 +1,16 @@
+==========================================================
+Start date : Wed Sep 13 19:46:06 EDT 2023
+Job name : db_uniprot
+Job ID : 1
+==========================================================
+
+
+Building a new DB, current time: 09/13/2023 19:46:06
+New DB name:   /restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/Uniprot/uniref90.fasta
+New DB title:  uniref90.fasta
+Sequence type: Protein
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 176029043 sequences in 5674.17 seconds.
+
+

@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/CDC1551_vs_HN878/out assemblies/CDC1551.1.fasta assemblies/HN878.1.fasta

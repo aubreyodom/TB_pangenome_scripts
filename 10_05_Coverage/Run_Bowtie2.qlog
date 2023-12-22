@@ -1,0 +1,119 @@
+==========================================================
+Start date : Mon Oct 10 22:47:28 EDT 2022
+Job name : poonam
+Job ID : 1
+==========================================================
+"raw1_fasta1"
+==========================================================
+Start date : Mon Oct 10 23:05:29 EDT 2022
+Job name : poonam
+Job ID : 1
+==========================================================
+raw1_fasta1
+(ERR): bowtie2-align died with signal 9 (KILL) 
+raw2_fasta1
+Error: Out of memory allocating 536871173 __m128i's for DP matrix: 'std::bad_alloc'
+Tried to allocate DP matrix with 23378 columns, 2915 vectors per column, and and 4 vectors per cell
+terminate called after throwing an instance of 'std::exception'
+  what():  std::exception
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw3_fasta1
+(ERR): bowtie2-align died with signal 9 (KILL) 
+raw4_fasta1
+(ERR): bowtie2-align died with signal 9 (KILL) 
+raw5_fasta1
+(ERR): bowtie2-align died with signal 9 (KILL) 
+raw6_fasta1
+(ERR): bowtie2-align died with signal 9 (KILL) 
+raw1_fasta2
+Error: Out of memory allocating 2147484479 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw2_fasta2
+Error: Out of memory allocating 2147484158 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw3_fasta2
+Error: Out of memory allocating 1073741951 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw4_fasta2
+Error: Out of memory allocating 2147484094 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw5_fasta2
+Error: Out of memory allocating Error: Out of memory allocating 1073741867 __m128i's for DP matrix: '1073741857std::bad_alloc' __m128i's for DP matrix: 'std::bad_alloc'
+
+Tried to allocate DP matrix with 34434 columns, 4297Tried to allocate DP matrix with 33108 columns, 4131 vectors per column, and and 4 vectors per cell
+ vectors per column, and and 4 vectors per cell
+terminate called after throwing an instance of 'std::exception'
+  what():  std::exception
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw6_fasta2
+Error: Out of memory allocating 1073741855 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw1_fasta3
+Error: Out of memory allocating 2147483871 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw2_fasta3
+Error: Out of memory allocating 2147483702 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw3_fasta3
+(ERR): bowtie2-align died with signal 9 (KILL) 
+raw4_fasta3
+Error: Out of memory allocating 4294968957 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw5_fasta3
+Error: Out of memory allocating 2147483903 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw6_fasta3
+Error: Out of memory allocating 2147483703 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw1_fasta4
+Error: Out of memory allocating 1073742271 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw2_fasta4
+Error: Out of memory allocating 4294968004 __m128i's for DP matrix: 'std::bad_alloc'
+Tried to allocate DP matrix with 66961 columns, 8363 vectors per column, and and 4 vectors per cell
+terminate called after throwing an instance of 'std::exception'
+  what():  std::exception
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw3_fasta4
+Error: Out of memory allocating 2147483855 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw4_fasta4
+Error: Out of memory allocating 4294968861 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw5_fasta4
+Error: Out of memory allocating 2147484143 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+raw6_fasta4
+Error: Out of memory allocating 2147484159 __m128i's for DP matrix: 'std::bad_alloc'
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+(ERR): bowtie2-align died with signal 6 (ABRT) 
+DONE!

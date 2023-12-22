@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/TDR51_vs_TDR86/out assemblies/TDR51.fasta assemblies/TDR86.fasta

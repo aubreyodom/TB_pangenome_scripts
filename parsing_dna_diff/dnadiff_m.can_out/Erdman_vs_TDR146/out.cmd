@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/Erdman_vs_TDR146/out assemblies/Erdman.1.fasta assemblies/TDR146.fasta

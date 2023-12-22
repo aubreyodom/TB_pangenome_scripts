@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/Erdman_vs_TDR5/out assemblies/Erdman.1.fasta assemblies/TDR5.fasta

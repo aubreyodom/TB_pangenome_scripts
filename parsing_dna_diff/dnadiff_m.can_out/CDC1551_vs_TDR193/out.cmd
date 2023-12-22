@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/CDC1551_vs_TDR193/out assemblies/CDC1551.1.fasta assemblies/TDR193.fasta

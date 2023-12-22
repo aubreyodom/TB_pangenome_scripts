@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/NR123_vs_Strain210/out assemblies/NR123.fasta assemblies/Strain210.1.fasta

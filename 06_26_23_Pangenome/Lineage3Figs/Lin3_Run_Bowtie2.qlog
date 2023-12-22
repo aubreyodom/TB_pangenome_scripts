@@ -1,0 +1,126 @@
+==========================================================
+Start date : Tue Jul 18 17:33:20 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+BCCM_089_H37Rv_new
+Starting alignment
+12221572 reads; of these:
+  12221572 (100.00%) were unpaired; of these:
+    298513 (2.44%) aligned 0 times
+    11735489 (96.02%) aligned exactly 1 time
+    187570 (1.53%) aligned >1 times
+97.56% overall alignment rate
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+BCCM_090_H37Rv_new
+Starting alignment
+12221572 reads; of these:
+  12221572 (100.00%) were unpaired; of these:
+    298513 (2.44%) aligned 0 times
+    11735489 (96.02%) aligned exactly 1 time
+    187570 (1.53%) aligned >1 times
+97.56% overall alignment rate
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+BCCM_091_H37Rv_new
+Starting alignment
+16793496 reads; of these:
+  16793496 (100.00%) were unpaired; of these:
+    626518 (3.73%) aligned 0 times
+    15873419 (94.52%) aligned exactly 1 time
+    293559 (1.75%) aligned >1 times
+96.27% overall alignment rate
+[bam_sort_core] merging from 5 files and 1 in-memory blocks...
+DONE!
+==========================================================
+Start date : Wed Jul 19 14:34:22 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+BCCM_089_BCCM_089
+Starting alignment
+12221572 reads; of these:
+  12221572 (100.00%) were unpaired; of these:
+    254312 (2.08%) aligned 0 times
+    11766947 (96.28%) aligned exactly 1 time
+    200313 (1.64%) aligned >1 times
+97.92% overall alignment rate
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+BCCM_090_BCCM_090
+Starting alignment
+12221572 reads; of these:
+  12221572 (100.00%) were unpaired; of these:
+    257077 (2.10%) aligned 0 times
+    11761199 (96.23%) aligned exactly 1 time
+    203296 (1.66%) aligned >1 times
+97.90% overall alignment rate
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+BCCM_091_BCCM_091
+Starting alignment
+16793496 reads; of these:
+  16793496 (100.00%) were unpaired; of these:
+    569905 (3.39%) aligned 0 times
+    15907809 (94.73%) aligned exactly 1 time
+    315782 (1.88%) aligned >1 times
+96.61% overall alignment rate
+[bam_sort_core] merging from 5 files and 1 in-memory blocks...
+DONE!
+==========================================================
+Start date : Thu Jul 20 00:51:03 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+BCCM_089_BCCM_089
+Starting alignment
+12221572 reads; of these:
+  12221572 (100.00%) were unpaired; of these:
+    254312 (2.08%) aligned 0 times
+    11766947 (96.28%) aligned exactly 1 time
+    200313 (1.64%) aligned >1 times
+97.92% overall alignment rate
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+BCCM_090_BCCM_090
+Starting alignment
+12221572 reads; of these:
+  12221572 (100.00%) were unpaired; of these:
+    257077 (2.10%) aligned 0 times
+    11761199 (96.23%) aligned exactly 1 time
+    203296 (1.66%) aligned >1 times
+97.90% overall alignment rate
+[bam_sort_core] merging from 3 files and 1 in-memory blocks...
+BCCM_091_BCCM_091
+Starting alignment
+16793496 reads; of these:
+  16793496 (100.00%) were unpaired; of these:
+    569905 (3.39%) aligned 0 times
+    15907809 (94.73%) aligned exactly 1 time
+    315782 (1.88%) aligned >1 times
+96.61% overall alignment rate
+[bam_sort_core] merging from 5 files and 1 in-memory blocks...
+DMSO-1_H37Rv_new
+Starting alignment
+23463234 reads; of these:
+  23463234 (100.00%) were unpaired; of these:
+    739225 (3.15%) aligned 0 times
+    22364290 (95.32%) aligned exactly 1 time
+    359719 (1.53%) aligned >1 times
+96.85% overall alignment rate
+[bam_sort_core] merging from 7 files and 1 in-memory blocks...
+DMSO-2_H37Rv_new
+Starting alignment
+17329790 reads; of these:
+  17329790 (100.00%) were unpaired; of these:
+    490991 (2.83%) aligned 0 times
+    16562153 (95.57%) aligned exactly 1 time
+    276646 (1.60%) aligned >1 times
+97.17% overall alignment rate
+[bam_sort_core] merging from 5 files and 1 in-memory blocks...
+DMSO-4_H37Rv_new
+Starting alignment
+22360494 reads; of these:
+  22360494 (100.00%) were unpaired; of these:
+    622930 (2.79%) aligned 0 times
+    21373683 (95.59%) aligned exactly 1 time
+    363881 (1.63%) aligned >1 times
+97.21% overall alignment rate
+[bam_sort_core] merging from 6 files and 1 in-memory blocks...
+DONE!

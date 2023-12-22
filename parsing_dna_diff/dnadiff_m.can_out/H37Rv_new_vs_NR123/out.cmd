@@ -1,0 +1,1 @@
+dnadiff -p dnadiff_m.can_out/H37Rv_new_vs_NR123/out assemblies/H37Rv_new.fasta assemblies/NR123.fasta

@@ -1,0 +1,47 @@
+/bin/bash: -: invalid option
+Usage:	/bin/bash [GNU long option] [option] ...
+	/bin/bash [GNU long option] [option] script-file ...
+GNU long options:
+	--debug
+	--debugger
+	--dump-po-strings
+	--dump-strings
+	--help
+	--init-file
+	--login
+	--noediting
+	--noprofile
+	--norc
+	--posix
+	--protected
+	--rcfile
+	--rpm-requires
+	--restricted
+	--verbose
+	--version
+Shell options:
+	-irsD or -c command or -O shopt_option		(invocation only)
+	-abefhkmnptuvxBCHP or -o option
+==========================================================
+Start date : Sat May 27 00:31:48 EDT 2023
+Job name : blast
+Job ID : 1
+==========================================================
+USAGE
+  makeblastdb [-h] [-help] [-in input_file] [-input_type type]
+    -dbtype molecule_type [-title database_title] [-parse_seqids]
+    [-hash_index] [-mask_data mask_data_files] [-mask_id mask_algo_ids]
+    [-mask_desc mask_algo_descriptions] [-gi_mask]
+    [-gi_mask_name gi_based_mask_names] [-out database_name]
+    [-blastdb_version version] [-max_file_sz number_of_bytes]
+    [-logfile File_Name] [-taxid TaxID] [-taxid_map TaxIDMapFile] [-version]
+
+DESCRIPTION
+   Application to create BLAST databases, version 2.12.0+
+
+Use '-help' to print detailed descriptions of command line arguments
+========================================================================
+
+Error: Too many positional arguments (1), the offending value: –in
+Error:  (CArgException::eSynopsis) Too many positional arguments (1), the offending value: –in
+Command line argument error: Argument "query". File is not accessible:  `/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/05_01_23_Pangenome//BCCM_083.fasta'

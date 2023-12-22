@@ -1,0 +1,102 @@
+==========================================================
+Start date : Tue Jun 27 16:42:31 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+CDC1551_CDC15514_Three_pilon
+Starting alignment
+20129485 reads; of these:
+  20129485 (100.00%) were paired; of these:
+    2079631 (10.33%) aligned concordantly 0 times
+    17398688 (86.43%) aligned concordantly exactly 1 time
+    651166 (3.23%) aligned concordantly >1 times
+    ----
+    2079631 pairs aligned concordantly 0 times; of these:
+      1861538 (89.51%) aligned discordantly 1 time
+    ----
+    218093 pairs aligned 0 times concordantly or discordantly; of these:
+      436186 mates make up the pairs; of these:
+        158142 (36.26%) aligned 0 times
+        172908 (39.64%) aligned exactly 1 time
+        105136 (24.10%) aligned >1 times
+99.61% overall alignment rate
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+CDC1551_CDC15515_Three_pilon
+Starting alignment
+20129485 reads; of these:
+  20129485 (100.00%) were paired; of these:
+    2079631 (10.33%) aligned concordantly 0 times
+    17398691 (86.43%) aligned concordantly exactly 1 time
+    651163 (3.23%) aligned concordantly >1 times
+    ----
+    2079631 pairs aligned concordantly 0 times; of these:
+      1861540 (89.51%) aligned discordantly 1 time
+    ----
+    218091 pairs aligned 0 times concordantly or discordantly; of these:
+      436182 mates make up the pairs; of these:
+        158142 (36.26%) aligned 0 times
+        172906 (39.64%) aligned exactly 1 time
+        105134 (24.10%) aligned >1 times
+99.61% overall alignment rate
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+DONE!
+==========================================================
+Start date : Wed Jun 28 15:58:56 EDT 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+CDC1551_CDC15514_Three_pilon
+Starting alignment
+20129485 reads; of these:
+  20129485 (100.00%) were paired; of these:
+    2079631 (10.33%) aligned concordantly 0 times
+    17398688 (86.43%) aligned concordantly exactly 1 time
+    651166 (3.23%) aligned concordantly >1 times
+    ----
+    2079631 pairs aligned concordantly 0 times; of these:
+      1861538 (89.51%) aligned discordantly 1 time
+    ----
+    218093 pairs aligned 0 times concordantly or discordantly; of these:
+      436186 mates make up the pairs; of these:
+        158142 (36.26%) aligned 0 times
+        172908 (39.64%) aligned exactly 1 time
+        105136 (24.10%) aligned >1 times
+99.61% overall alignment rate
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+CDC1551_CDC15515_Three_pilon
+Starting alignment
+20129485 reads; of these:
+  20129485 (100.00%) were paired; of these:
+    2079631 (10.33%) aligned concordantly 0 times
+    17398691 (86.43%) aligned concordantly exactly 1 time
+    651163 (3.23%) aligned concordantly >1 times
+    ----
+    2079631 pairs aligned concordantly 0 times; of these:
+      1861540 (89.51%) aligned discordantly 1 time
+    ----
+    218091 pairs aligned 0 times concordantly or discordantly; of these:
+      436182 mates make up the pairs; of these:
+        158142 (36.26%) aligned 0 times
+        172906 (39.64%) aligned exactly 1 time
+        105134 (24.10%) aligned >1 times
+99.61% overall alignment rate
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+CDC1551_cdc1551_sequence
+Starting alignment
+20129485 reads; of these:
+  20129485 (100.00%) were paired; of these:
+    2089669 (10.38%) aligned concordantly 0 times
+    17401050 (86.45%) aligned concordantly exactly 1 time
+    638766 (3.17%) aligned concordantly >1 times
+    ----
+    2089669 pairs aligned concordantly 0 times; of these:
+      1861263 (89.07%) aligned discordantly 1 time
+    ----
+    228406 pairs aligned 0 times concordantly or discordantly; of these:
+      456812 mates make up the pairs; of these:
+        178270 (39.02%) aligned 0 times
+        174355 (38.17%) aligned exactly 1 time
+        104187 (22.81%) aligned >1 times
+99.56% overall alignment rate
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+DONE!

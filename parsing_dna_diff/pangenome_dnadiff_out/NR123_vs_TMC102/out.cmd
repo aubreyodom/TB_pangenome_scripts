@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/NR123_vs_TMC102/out assemblies/NR123.fasta assemblies/TMC102.fasta

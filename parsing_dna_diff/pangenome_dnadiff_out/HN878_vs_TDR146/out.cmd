@@ -1,0 +1,1 @@
+dnadiff -p pangenome_dnadiff_out/HN878_vs_TDR146/out assemblies/HN878.1.fasta assemblies/TDR146.fasta

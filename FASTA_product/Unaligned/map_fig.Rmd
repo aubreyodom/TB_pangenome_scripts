@@ -1,0 +1,120 @@
+---
+title: "Validate_pangenome"
+author: "Aubrey Odom"
+date: "2023-08-14"
+output: html_document
+---
+
+# Setup
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(data.table)
+  library(Rsamtools)
+  library(patchwork)
+})
+```
+
+# Read in gene position data from reference genomes of interest
+```{R}
+stem <- "~/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product"
+pangenome_pos <- fread(file.path(stem, "pangenome_no_seqs.csv")) %>%
+  as_tibble() %>%
+  select(V2, V3, V4, V5, V8)
+
+only_BCCM082 <- pangenome_pos %>%
+  filter(V8 == "BCCM_082")
+
+only_BCCM083 <- pangenome_pos %>%
+  filter(V8 == "BCCM_083")
+```
+
+# Read in BAM files from (unaligned to pangenome) reads aligned to reference genomes
+```{R}
+stem <- "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/TB_pangenome_scripts/FASTA_product/Alignments"
+
+fl <- file.path(stem, "UN_ERR2704680_BCCM_083.sorted.bam")
+bf1 <- BamFile(fl)
+bam_index1 <- file.path(stem, "UN_ERR2704680_BCCM_083.sorted.bam.bai")
+
+# Mapped back poorly
+f2 <- file.path(stem, "UN_ERR2704685_BCCM_082.sorted.bam")
+bf2 <- BamFile(f2)
+bam_index3 <- file.path(stem, "UN_ERR2704685_BCCM_082.sorted.bam.bai")
+
+# Mapped back really well
+f3 <- file.path(stem, "UN_ERR2704704_BCCM_082.sorted.bam")
+bf3 <- BamFile(f3)
+bam_index3 <- file.path(stem, "UN_ERR2704704_BCCM_082.sorted.bam.bai")
+
+```
+
+# Plot
+
+## Function
+```{R}
+create_plot <- function(bf, bam_index, this_title, limited_pos, lim1 = 1, lim2 = 50000) {
+  # Find locations of mapped reads
+  this_pileup <- pileup(bf, index = bam_index, scanBamParam = ScanBamParam(what = "pos"),
+         pileupParam = PileupParam())
+  
+  # Sample by 100 reads
+  onlyrows <- seq(1, max(this_pileup$pos), by = 50)
+  
+  p <- this_pileup %>%
+    filter(strand == "+",
+           pos %in% onlyrows) %>%
+  ggplot(aes(x = pos, y = count)) +
+    geom_bar(stat = "identity", alpha = 0.5) +
+    theme_classic() +
+    theme(axis.title.x = element_blank()) + #remove x axis labels
+    labs(title = this_title,
+         subtitle = "Unaligned to pangenome sequence") +
+    xlim(c(lim1, lim2))
+  
+  nolisting <- limited_pos %>%
+    select(V4, V5) %>%
+    t() %>% as.data.frame() %>%
+    unlist() %>% unname()
+  
+  # Invert gene regions to mark intergenic regions
+  inverse <- c(min(this_pileup$pos), nolisting, max(this_pileup$pos)) %>%
+    matrix(byrow = TRUE, ncol = 2) %>%
+    as_tibble()
+  
+  #p2 <- inverse %>%
+  #  ggplot() +
+  #  geom_rect(aes(xmin = V1, xmax = V2,
+  #                ymin = 0, ymax = 1),
+  #            fill = "black",
+  #            color = "black") +
+  #  theme_void() +
+  #  theme(legend.position = "bottom") +
+  #  guides(fill = guide_legend(nrow = 3, byrow = TRUE)) +
+  #  xlim(c(lim1, lim2))
+  
+  p3 <- p +
+    geom_rect(data = inverse, inherit.aes=FALSE, 
+              aes(xmin = V1,
+                  xmax = V2,
+                  ymin = -Inf,
+                  ymax = Inf), fill='red', alpha= 0.2)
+  p3
+  
+  # Using patchwork library
+  #p / p2 + plot_layout(nrow = 2, heights = c(1, 0.1))
+}
+
+```
+
+
+```{R}
+create_plot(bf = bf3, bam_index = bam_index3, this_title = "Genomic alignments to BCCM 082",
+            limited_pos = only_BCCM082)
+create_plot(bf2, bam_index2, this_title = "Genomic alignments to BCCM 082",
+            limited_pos = only_BCCM082)
+create_plot(bf1, bam_index1, this_title = "Genomic alignments to BCCM 083",
+            limited_pos = only_BCCM083)
+```
+
+# Could cut up regions into smaller pieces, add a mutated column

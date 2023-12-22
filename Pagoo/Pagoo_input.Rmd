@@ -1,0 +1,37 @@
+---
+title: "Data processing for pagoo"
+author: "Aubrey Odom-Mabey"
+date: '2023-01-20'
+output: html_document
+---
+
+# Introduction
+Protocol for post-processing of bacterial pangenome data using Pagoo pipeline
+https://www.sciencedirect.com/science/article/pii/S2666166721005086
+
+An object-oriented framework for evolutionary pangenome analysis
+https://www.sciencedirect.com/science/article/pii/S2667237521001405?via%3Dihub
+
+# Setup
+```{R}
+suppressPackageStartupMessages({
+  library(tidyverse)
+})
+```
+
+Gene cluster input seems to be a term from Anvi'o
+
+# Trying to create pagoo input
+https://iferres.github.io/pagoo/articles/Input.html
+```{R}
+stem <- "/restricted/projectnb/tuberculosis/work/aubrey/Alland_TB/Pagoo"
+# Read in BCCM Anvio file
+gc_table <- file.path(stem, "TB_pangenome_canettii_gene_clusters_summary.txt") %>%
+  read_delim(show_col_types = FALSE, delim = "\t")
+
+gc_table %>% as_tibble() %>%
+  dplyr::select(gene = gene_callers_id, org = genome_name,
+                cluster = gene_cluster_id) %>% # can add annot column
+  arrange(gene) %>%
+  write_csv(file.path(stem, "pagoo_input_table_TB_canettii.csv"))
+```
