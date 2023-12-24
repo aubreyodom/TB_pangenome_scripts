@@ -157,3 +157,151 @@ Else invoked
         534821 (86.24%) aligned >1 times
 89.15% overall alignment rate
 DONE!
+==========================================================
+Start date : Sat Dec 23 17:43:21 EST 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+un_ERR2704685_BCCM_082
+Else invoked
+194729 reads; of these:
+  194729 (100.00%) were paired; of these:
+    190982 (98.08%) aligned concordantly 0 times
+    3624 (1.86%) aligned concordantly exactly 1 time
+    123 (0.06%) aligned concordantly >1 times
+    ----
+    190982 pairs aligned concordantly 0 times; of these:
+      137569 (72.03%) aligned discordantly 1 time
+    ----
+    53413 pairs aligned 0 times concordantly or discordantly; of these:
+      106826 mates make up the pairs; of these:
+        78567 (73.55%) aligned 0 times
+        14183 (13.28%) aligned exactly 1 time
+        14076 (13.18%) aligned >1 times
+79.83% overall alignment rate
+un_ERR2704704_BCCM_082
+Else invoked
+245285 reads; of these:
+  245285 (100.00%) were paired; of these:
+    236422 (96.39%) aligned concordantly 0 times
+    8606 (3.51%) aligned concordantly exactly 1 time
+    257 (0.10%) aligned concordantly >1 times
+    ----
+    236422 pairs aligned concordantly 0 times; of these:
+      204180 (86.36%) aligned discordantly 1 time
+    ----
+    32242 pairs aligned 0 times concordantly or discordantly; of these:
+      64484 mates make up the pairs; of these:
+        22328 (34.63%) aligned 0 times
+        23368 (36.24%) aligned exactly 1 time
+        18788 (29.14%) aligned >1 times
+95.45% overall alignment rate
+un_ERR2704680_BCCM_083
+Else invoked
+363315 reads; of these:
+  363315 (100.00%) were paired; of these:
+    347028 (95.52%) aligned concordantly 0 times
+    15776 (4.34%) aligned concordantly exactly 1 time
+    511 (0.14%) aligned concordantly >1 times
+    ----
+    347028 pairs aligned concordantly 0 times; of these:
+      302227 (87.09%) aligned discordantly 1 time
+    ----
+    44801 pairs aligned 0 times concordantly or discordantly; of these:
+      89602 mates make up the pairs; of these:
+        42283 (47.19%) aligned 0 times
+        23597 (26.34%) aligned exactly 1 time
+        23722 (26.47%) aligned >1 times
+94.18% overall alignment rate
+un_ERR2704685_pangenome_no_BCCM
+Else invoked
+Unable to read file magic number
+Unable to read file magic number
+0 reads
+0.00% overall alignment rate
+un_ERR2704704_pangenome_no_BCCM
+Else invoked
+245285 reads; of these:
+  245285 (100.00%) were paired; of these:
+    231514 (94.39%) aligned concordantly 0 times
+    3071 (1.25%) aligned concordantly exactly 1 time
+    10700 (4.36%) aligned concordantly >1 times
+    ----
+    231514 pairs aligned concordantly 0 times; of these:
+      4870 (2.10%) aligned discordantly 1 time
+    ----
+    226644 pairs aligned 0 times concordantly or discordantly; of these:
+      453288 mates make up the pairs; of these:
+        50068 (11.05%) aligned 0 times
+        20296 (4.48%) aligned exactly 1 time
+        382924 (84.48%) aligned >1 times
+89.79% overall alignment rate
+un_ERR2704680_pangenome_no_BCCM
+Else invoked
+363315 reads; of these:
+  363315 (100.00%) were paired; of these:
+    322431 (88.75%) aligned concordantly 0 times
+    10848 (2.99%) aligned concordantly exactly 1 time
+    30036 (8.27%) aligned concordantly >1 times
+    ----
+    322431 pairs aligned concordantly 0 times; of these:
+      15599 (4.84%) aligned discordantly 1 time
+    ----
+    306832 pairs aligned 0 times concordantly or discordantly; of these:
+      613664 mates make up the pairs; of these:
+        80792 (13.17%) aligned 0 times
+        8123 (1.32%) aligned exactly 1 time
+        524749 (85.51%) aligned >1 times
+88.88% overall alignment rate
+un_ERR2704685_pangenome
+Else invoked
+194729 reads; of these:
+  194729 (100.00%) were paired; of these:
+    180985 (92.94%) aligned concordantly 0 times
+    2559 (1.31%) aligned concordantly exactly 1 time
+    11185 (5.74%) aligned concordantly >1 times
+    ----
+    180985 pairs aligned concordantly 0 times; of these:
+      1983 (1.10%) aligned discordantly 1 time
+    ----
+    179002 pairs aligned 0 times concordantly or discordantly; of these:
+      358004 mates make up the pairs; of these:
+        91836 (25.65%) aligned 0 times
+        9826 (2.74%) aligned exactly 1 time
+        256342 (71.60%) aligned >1 times
+76.42% overall alignment rate
+un_ERR2704704_pangenome
+Else invoked
+245285 reads; of these:
+  245285 (100.00%) were paired; of these:
+    231007 (94.18%) aligned concordantly 0 times
+    2621 (1.07%) aligned concordantly exactly 1 time
+    11657 (4.75%) aligned concordantly >1 times
+    ----
+    231007 pairs aligned concordantly 0 times; of these:
+      3089 (1.34%) aligned discordantly 1 time
+    ----
+    227918 pairs aligned 0 times concordantly or discordantly; of these:
+      455836 mates make up the pairs; of these:
+        48528 (10.65%) aligned 0 times
+        16468 (3.61%) aligned exactly 1 time
+        390840 (85.74%) aligned >1 times
+90.11% overall alignment rate
+un_ERR2704680_pangenome
+Else invoked
+363315 reads; of these:
+  363315 (100.00%) were paired; of these:
+    321472 (88.48%) aligned concordantly 0 times
+    8941 (2.46%) aligned concordantly exactly 1 time
+    32902 (9.06%) aligned concordantly >1 times
+    ----
+    321472 pairs aligned concordantly 0 times; of these:
+      11411 (3.55%) aligned discordantly 1 time
+    ----
+    310061 pairs aligned 0 times concordantly or discordantly; of these:
+      620122 mates make up the pairs; of these:
+        78871 (12.72%) aligned 0 times
+        6430 (1.04%) aligned exactly 1 time
+        534821 (86.24%) aligned >1 times
+89.15% overall alignment rate
+DONE!

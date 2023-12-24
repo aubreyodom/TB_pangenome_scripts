@@ -1,0 +1,30 @@
+==========================================================
+Start date : Sat Dec 23 19:07:24 EST 2023
+Job name : poonam
+Job ID : 1
+==========================================================
+UN_ERR2704680_BCCM_083
+Else invoked
+525430 reads; of these:
+  525430 (100.00%) were unpaired; of these:
+    21013 (4.00%) aligned 0 times
+    472398 (89.91%) aligned exactly 1 time
+    32019 (6.09%) aligned >1 times
+96.00% overall alignment rate
+UN_ERR2704685_BCCM_082
+Else invoked
+277511 reads; of these:
+  277511 (100.00%) were unpaired; of these:
+    38324 (13.81%) aligned 0 times
+    224686 (80.96%) aligned exactly 1 time
+    14501 (5.23%) aligned >1 times
+86.19% overall alignment rate
+UN_ERR2704704_BCCM_082
+Else invoked
+513246 reads; of these:
+  513246 (100.00%) were unpaired; of these:
+    8588 (1.67%) aligned 0 times
+    477522 (93.04%) aligned exactly 1 time
+    27136 (5.29%) aligned >1 times
+98.33% overall alignment rate
+DONE!
